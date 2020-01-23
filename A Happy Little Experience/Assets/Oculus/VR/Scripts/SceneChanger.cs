@@ -20,7 +20,7 @@ public class SceneChanger : MonoBehaviour
             int index = SceneManager.GetActiveScene().buildIndex;
 
             if((index+1) >= count)
-            { index = 0; }
+            { index = -1; }
 
             SceneManager.LoadScene(index + 1);
         }
