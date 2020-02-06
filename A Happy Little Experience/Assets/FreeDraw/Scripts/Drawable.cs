@@ -193,12 +193,15 @@ namespace FreeDraw
             mouse_was_previously_held_down = mouse_held_down;
         }
 
-        private void OnCollisionStay(Collision collision)
+        public void OnCollisionStay(Collision collision)
         {
-            foreach (ContactPoint contact in collision.contacts)
+            if (collision.transform.tag == "Brush")
             {
-                Vector2 collison_vector = new Vector2(contact.point.x, contact.point.y);
-                current_brush(collison_vector);
+                foreach (ContactPoint contact in collision.contacts)
+                {
+                    Vector2 collison_vector = new Vector2(contact.point.x, contact.point.y);
+                    current_brush(collison_vector);
+                }
             }
         }
 
