@@ -23,10 +23,12 @@ public class grabBrush : MonoBehaviour
             childController.SetActive(true);
             transform.parent = null;
             held = false;
-            transform.position = childController.transform.position;
+            transform.position = childController.transform.position + Vector3.forward * brushOffset;
             childController = null;
+            GetComponent<Rigidbody>().useGravity = true;
+            GetComponent<Rigidbody>().isKinematic = false;
         }
-        else if ((OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || Input.GetKeyDown(KeyCode.Return)) && !held && colliding[0])
+        else if ((OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || Input.GetKeyDown(KeyCode.Return)) && !held && colliding[0])      //attatch left
         {
             transform.parent = colliding[0].transform;
             childController = colliding[0].transform.GetChild(0).gameObject;
@@ -34,8 +36,10 @@ public class grabBrush : MonoBehaviour
             //childController.SetActive(false);
             held = true;
             transform.localPosition = Vector3.forward * brushOffset;
+            GetComponent<Rigidbody>().useGravity = false;
+            GetComponent<Rigidbody>().isKinematic = true;
         }
-        else if ((OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger) || Input.GetKeyDown(KeyCode.Backspace)) && !held && colliding[1])
+        else if ((OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger) || Input.GetKeyDown(KeyCode.Backspace)) && !held && colliding[1]) //attach right
         {
             transform.parent = colliding[1].transform;
             childController = colliding[1].transform.GetChild(0).gameObject;
@@ -43,6 +47,8 @@ public class grabBrush : MonoBehaviour
             //childController.SetActive(false);
             held = true;
             transform.localPosition = Vector3.forward * brushOffset;
+            GetComponent<Rigidbody>().useGravity = false;
+            GetComponent<Rigidbody>().isKinematic = true;
         }
     }
 
