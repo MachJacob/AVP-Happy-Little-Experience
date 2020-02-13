@@ -7,4 +7,5 @@ public class Save
 {
     public int something;
     public int something_else;
+    public GameObject g_object;
 }

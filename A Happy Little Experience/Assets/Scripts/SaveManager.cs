@@ -35,6 +35,7 @@ public class SaveManager : MonoBehaviour
 
         save.something = SaveGameManager.instance.something;
         save.something_else = SaveGameManager.instance.something_else;
+        save.g_object = SaveGameManager.instance.g_object;
 
         return save;
     }
@@ -79,6 +80,10 @@ public class SaveManager : MonoBehaviour
             //MARKER LOAD THE DATA TO THE GAME
             SaveGameManager.instance.something = save.something;
             SaveGameManager.instance.something_else = save.something_else;
+            SaveGameManager.instance.g_object = save.g_object;
+            SaveGameManager.instance.Destroyy(gameObject); //how do i destroy the gameobject
+            
+
 
 
         }
