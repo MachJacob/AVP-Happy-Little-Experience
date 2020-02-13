@@ -14,7 +14,7 @@ namespace FreeDraw
         // PEN COLOUR
         public static Color Pen_Colour = new Color32(150,75,0,1);     // Change these to change the default drawing settings
         // PEN WIDTH (actually, it's a radius, in pixels)
-        public static int Pen_Width = 8;
+        public static int Pen_Width = 10;
 
         public delegate void Brush_Function(Vector2 world_position);
         // This is the function called when a left click happens
@@ -106,21 +106,16 @@ namespace FreeDraw
             Vector2 pixel_pos = WorldToPixelCoordinates(world_point);
 
             cur_colors = drawable_texture.GetPixels32();
-
             if (previous_drag_position == Vector2.zero)
             {
-                // If this is the first time we've ever dragged on this image, simply colour the pixels at our mouse position
-                MarkPixelsToColour(pixel_pos, Pen_Width, PenColour);
+                previous_drag_position = pixel_pos;
             }
-            else
-            {
                 // Colour in a line from where we were on the last update call
-                ColourBetween(previous_drag_position, pixel_pos, Pen_Width, PenColour);
-            }
+            ColourBetween(previous_drag_position, pixel_pos, Pen_Width, PenColour);
             ApplyMarkedPixelChanges();
 
             //Debug.Log("Dimensions: " + pixelWidth + "," + pixelHeight + ". Units to pixels: " + unitsToPixels + ". Pixel pos: " + pixel_pos);
-            previous_drag_position = pixel_pos;
+            
         }
 
 
@@ -232,15 +227,21 @@ namespace FreeDraw
             int center_y = (int)center_pixel.y;
             //int extra_radius = Mathf.Min(0, pen_thickness - 2);
 
-            for (int x = center_x - pen_thickness; x <= center_x + pen_thickness; x++)
+            for (int x = center_x - (int)(pen_thickness * 1.5); x <= center_x + (int)(pen_thickness * 1.5); x++)
             {
                 // Check if the X wraps around the image, so we don't draw pixels on the other side of the image
                 if (x >= (int)drawable_texture.width || x < 0)
                     continue;
 
-                for (int y = center_y - pen_thickness; y <= center_y + pen_thickness; y++)
+                for (int y = center_y - (int)(pen_thickness * 1.5); y <= center_y + (int)(pen_thickness * 1.5); y++)
                 {
-                    MarkPixelToChange(x, y, color_of_pen);
+                    int deltaX = x - center_x;
+                    int deltaY = y - center_y;
+                    float dist = Mathf.Sqrt(deltaX * deltaX + deltaY * deltaY);
+                    if (dist < pen_thickness)
+                    {
+                        MarkPixelToChange(x, y, color_of_pen);
+                    }
                 }
             }
         }
@@ -272,11 +273,17 @@ namespace FreeDraw
             int center_y = (int)center_pixel.y;
             //int extra_radius = Mathf.Min(0, pen_thickness - 2);
 
-            for (int x = center_x - pen_thickness; x <= center_x + pen_thickness; x++)
+            for (int x = center_x - (int)(pen_thickness * 1.5); x <= center_x + (int)(pen_thickness * 1.5); x++)
             {
-                for (int y = center_y - pen_thickness; y <= center_y + pen_thickness; y++)
+                for (int y = center_y - (int)(pen_thickness * 1.5); y <= center_y + (int)(pen_thickness * 1.5); y++)
                 {
-                    drawable_texture.SetPixel(x, y, color_of_pen);
+                    int deltaX = x - center_x;
+                    int deltaY = y - center_y;
+                    float dist = Mathf.Sqrt(deltaX * deltaX + deltaY * deltaY);
+                    if (dist < pen_thickness)
+                    {
+                        drawable_texture.SetPixel(x, y, color_of_pen);
+                    }
                 }
             }
 
@@ -288,15 +295,16 @@ namespace FreeDraw
         {
             // Change coordinates to local coordinates of this image
             Vector3 local_pos = transform.InverseTransformPoint(world_position);
-
+            local_pos.x += 0.5f;
+            local_pos.y += 0.5f;
             // Change these to coordinates of pixels
             float pixelWidth = drawable_texture.width;
             float pixelHeight = drawable_texture.height;
-            float unitsToPixels = pixelWidth / (pixelWidth / 100) * transform.localScale.x;
+        
 
             // Need to center our coordinates
-            float centered_x = pixelWidth - (local_pos.x * unitsToPixels + pixelWidth / 2);
-            float centered_y = (local_pos.y * unitsToPixels + pixelHeight / 2);
+            float centered_x = pixelWidth - (local_pos.x * pixelWidth);
+            float centered_y = (local_pos.y * pixelHeight);
 
             // Round current mouse position to nearest pixel
             Vector2 pixel_pos = new Vector2(Mathf.RoundToInt(centered_x), Mathf.RoundToInt(centered_y));
