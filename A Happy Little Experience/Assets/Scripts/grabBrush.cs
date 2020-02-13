@@ -28,7 +28,7 @@ public class grabBrush : MonoBehaviour
             GetComponent<Rigidbody>().useGravity = true;
             GetComponent<Rigidbody>().isKinematic = false;
         }
-        else if ((OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || Input.GetKeyDown(KeyCode.Return)) && !held && colliding[0])      //attatch left
+        else if ((OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || Input.GetKeyDown(KeyCode.Return)) && !held && colliding[0])      //attach left
         {
             transform.parent = colliding[0].transform;
             childController = colliding[0].transform.GetChild(0).gameObject;
