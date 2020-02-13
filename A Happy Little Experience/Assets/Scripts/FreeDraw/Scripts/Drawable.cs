@@ -178,12 +178,11 @@ namespace FreeDraw
         {
             if (collision.transform.tag == "Brush")
             {
+                Pen_Colour = collision.transform.parent.gameObject.GetComponent<DrawingSettings>().GetMarkerColour();
+                Pen_Width = collision.transform.parent.gameObject.GetComponent<DrawingSettings>().GetMarkerWidth();
                 foreach (ContactPoint contact in collision.contacts)
                 {
                     Vector2 collison_vector = new Vector2(contact.point.x, contact.point.y);
-                    Pen_Colour = collision.gameObject.GetComponent<DrawingSettings>().GetMarkerColour();
-                    Pen_Width = collision.gameObject.GetComponent<DrawingSettings>().GetMarkerWidth();
-                    Debug.Log(Pen_Colour);
                     current_brush(collison_vector);
                 }
             }

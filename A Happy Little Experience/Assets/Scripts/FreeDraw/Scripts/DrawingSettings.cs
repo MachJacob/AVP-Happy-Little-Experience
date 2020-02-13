@@ -14,13 +14,11 @@ namespace FreeDraw
         public static bool isCursorOverUI = false;
         public float Transparency = 1f;
 
+        public Material paint;
+
         private void Update()
         {
-            if (Input.GetMouseButtonDown(1))
-            {
-                Drawable.Pen_Colour = penColour;
-            }
-            Drawable.Pen_Width = width;
+            paint.color = penColour;
         }
 
         // Changing pen settings is easy as changing the static properties Drawable.Pen_Colour and Drawable.Pen_Width
