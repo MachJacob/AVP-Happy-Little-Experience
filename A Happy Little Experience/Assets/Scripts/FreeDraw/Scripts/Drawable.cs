@@ -12,7 +12,7 @@ namespace FreeDraw
     public class Drawable : MonoBehaviour
     {
         // PEN COLOUR
-        public static Color Pen_Colour = new Color32(150,75,0,1);     // Change these to change the default drawing settings
+        public static Color Pen_Colour = new Color32(255, 255, 0, 1);     // Change these to change the default drawing settings
         // PEN WIDTH (actually, it's a radius, in pixels)
         public static int Pen_Width = 10;
 
@@ -21,11 +21,6 @@ namespace FreeDraw
         // Pass in your own custom one to change the brush type
         // Set the default function in the Awake method
         public Brush_Function current_brush;
-
-        public static Color PenColour = new Color32(150, 75, 0, 1);
-        public Color[] PenColours;
-        int penColourIndex = 0;
-
 
         public LayerMask Drawing_Layers;
 
@@ -77,13 +72,13 @@ namespace FreeDraw
                 // THIS IS THE FIRST CLICK
                 // FILL IN WHATEVER YOU WANT TO DO HERE
                 // Maybe mark multiple pixels to colour?
-                MarkPixelsToColour(pixel_pos, Pen_Width, PenColour);
+                MarkPixelsToColour(pixel_pos, Pen_Width, Pen_Colour);
             }
             else
             {
                 // THE USER IS DRAGGING
                 // Should we do stuff between the previous mouse position and the current one?
-                ColourBetween(previous_drag_position, pixel_pos, Pen_Width, PenColour);
+                ColourBetween(previous_drag_position, pixel_pos, Pen_Width, Pen_Colour);
             }
             ////////////////////////////////////////////////////////////////
 
@@ -111,7 +106,7 @@ namespace FreeDraw
                 previous_drag_position = pixel_pos;
             }
                 // Colour in a line from where we were on the last update call
-            ColourBetween(previous_drag_position, pixel_pos, Pen_Width, PenColour);
+            ColourBetween(previous_drag_position, pixel_pos, Pen_Width, Pen_Colour);
             ApplyMarkedPixelChanges();
 
             //Debug.Log("Dimensions: " + pixelWidth + "," + pixelHeight + ". Units to pixels: " + unitsToPixels + ". Pixel pos: " + pixel_pos);
@@ -142,15 +137,6 @@ namespace FreeDraw
                 current_brush = PenBrush;
             }
 
-            if (Input.GetMouseButtonDown(1))
-            {
-                if (PenColours.Length != 0)
-                {
-                    penColourIndex = penColourIndex >= PenColours.Length - 1 ? 0 : penColourIndex + 1;
-                    
-                    PenColour = PenColours[penColourIndex];
-                }
-            }
             // Is the user holding down the left mouse button?
             bool mouse_held_down = Input.GetMouseButton(0);
             if (mouse_held_down && !no_drawing_on_current_drag)
@@ -195,6 +181,9 @@ namespace FreeDraw
                 foreach (ContactPoint contact in collision.contacts)
                 {
                     Vector2 collison_vector = new Vector2(contact.point.x, contact.point.y);
+                    Pen_Colour = collision.gameObject.GetComponent<DrawingSettings>().GetMarkerColour();
+                    Pen_Width = collision.gameObject.GetComponent<DrawingSettings>().GetMarkerWidth();
+                    Debug.Log(Pen_Colour);
                     current_brush(collison_vector);
                 }
             }
@@ -205,7 +194,6 @@ namespace FreeDraw
         {
             // Get the distance from start to finish
             float distance = Vector2.Distance(start_point, end_point);
-            Vector2 direction = (start_point - end_point).normalized;
 
             Vector2 cur_position = start_point;
 

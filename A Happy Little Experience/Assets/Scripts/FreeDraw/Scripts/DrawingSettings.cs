@@ -8,7 +8,7 @@ namespace FreeDraw
     // Helper methods used to set drawing settings
     public class DrawingSettings : MonoBehaviour
     {
-        public int width;
+        public int width = 10;
         public Color penColour = Color.red;
 
         public static bool isCursorOverUI = false;
@@ -18,7 +18,7 @@ namespace FreeDraw
         {
             if (Input.GetMouseButtonDown(1))
             {
-                Drawable.PenColour = penColour;
+                Drawable.Pen_Colour = penColour;
             }
             Drawable.Pen_Width = width;
         }
@@ -26,8 +26,14 @@ namespace FreeDraw
         // Changing pen settings is easy as changing the static properties Drawable.Pen_Colour and Drawable.Pen_Width
         public void SetMarkerColour(Color new_color)
         {
-            Drawable.PenColour = new_color;
+            penColour = new_color;
         }
+
+        public Color GetMarkerColour()
+        {
+            return penColour;
+        }
+
         // new_width is radius in pixels
         public void SetMarkerWidth(int new_width)
         {
@@ -38,12 +44,17 @@ namespace FreeDraw
             SetMarkerWidth((int)new_width);
         }
 
+        public int GetMarkerWidth()
+        {
+            return width;
+        }
+
         public void SetTransparency(float amount)
         {
             Transparency = amount;
-            Color c = Drawable.PenColour;
+            Color c = Drawable.Pen_Colour;
             c.a = amount;
-            Drawable.PenColour = c;
+            Drawable.Pen_Colour = c;
         }
 
 
