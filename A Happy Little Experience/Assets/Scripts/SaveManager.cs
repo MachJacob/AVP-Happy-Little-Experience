@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine.UI;
 
 public class SaveManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //public Bat batGameObject;
+
+    public SavePos saveGameObject;
+    private geomatary the_cube;
+
     void Start()
     {
-        
+        the_cube = FindObjectOfType<geomatary>();
     }
 
     // Update is called once per frame
@@ -36,6 +41,20 @@ public class SaveManager : MonoBehaviour
         save.something = SaveGameManager.instance.something;
         save.something_else = SaveGameManager.instance.something_else;
         save.g_object = SaveGameManager.instance.g_object;
+
+        save.coinsNum = SaveGameManager.instance.coins;
+        save.diamondsNum = SaveGameManager.instance.diamonds;
+        save.id = SaveGameManager.instance.id;
+        save.id = geomatary.instance.cube_id;
+        save.g_positions = geomatary.instance.cube_positions;
+        save.playerPositionX = the_cube.transform.position.x;
+        save.playerPositionY = the_cube.transform.position.y;
+        save.g_object = geomatary.instance.cube;
+
+
+        //save.playerPositionX = player.transform.position.x;
+        //save.playerPositionY = player.transform.position.y;
+
 
         return save;
     }
@@ -80,13 +99,26 @@ public class SaveManager : MonoBehaviour
             //MARKER LOAD THE DATA TO THE GAME
             SaveGameManager.instance.something = save.something;
             SaveGameManager.instance.something_else = save.something_else;
+            SaveGameManager.instance.id = save.id;
             SaveGameManager.instance.g_object = save.g_object;
-            SaveGameManager.instance.Destroyy(gameObject); //how do i destroy the gameobject
-            
 
+            //SaveGameManager.instance.Destroyy(gameObject); //how do i destroy the gameobject
+
+            SaveGameManager.instance.coins = save.coinsNum;
+            SaveGameManager.instance.diamonds = save.diamondsNum;
+
+            geomatary.instance.cube_id = save.id;
+            geomatary.instance.cube_positions = save.g_positions;
+            geomatary.instance.cube = save.g_object;
+
+            the_cube.transform.position = new Vector2(save.playerPositionX, save.playerPositionY);
+            //player.transform.position = new Vector2(save.playerPositionX, save.playerPositionY);
+
+            //MARKER Enemy position
 
 
         }
+        
 
         else
         {
