@@ -689,7 +689,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliding: []
-  brushOffset: 0.1
+  rotationOffset: 0
+  offset: {x: 0, y: 0, z: 0}
 --- !u!54 &1275642830
 Rigidbody:
   m_ObjectHideFlags: 0
