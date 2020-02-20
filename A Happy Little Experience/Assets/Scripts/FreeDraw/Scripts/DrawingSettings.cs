@@ -9,83 +9,78 @@ namespace FreeDraw
     public class DrawingSettings : MonoBehaviour
     {
         public int width = 10;
-        public Color penColour = Color.red;
+        public Color brushColour = Color.red;
 
-        public static bool isCursorOverUI = false;
-        public float Transparency = 1f;
+        float hue = 0;
+        float saturation = 1;
+        float value = 1;
+
+
+        public bool is_clean = true;
 
         public Material paint;
 
         private void Update()
         {
-            paint.color = penColour;
+            paint.color = brushColour;
         }
 
+        public void cleanBrush()
+        {
+            is_clean = true;
+            paint.color = Color.white;
+        }
+
+        public void setHue(float _hue)
+        {
+            hue = _hue;
+            SetBrushColour(Color.HSVToRGB(hue, saturation, value));
+        }
+
+        public void setSaturation(float _saturation)
+        {
+            saturation = _saturation;
+            SetBrushColour(Color.HSVToRGB(hue, saturation, value));
+        }
+
+        public void setValue(float _value)
+        {
+            value = _value;
+            SetBrushColour(Color.HSVToRGB(hue, saturation, value));
+        }
         // Changing pen settings is easy as changing the static properties Drawable.Pen_Colour and Drawable.Pen_Width
-        public void SetMarkerColour(Color new_color)
+        public void SetBrushColour(Color new_color)
         {
-            penColour = new_color;
+            brushColour = new_color;
+            is_clean = false;
         }
 
-        public Color GetMarkerColour()
+        public Color GetBrushColour()
         {
-            return penColour;
+            return brushColour;
         }
 
         // new_width is radius in pixels
-        public void SetMarkerWidth(int new_width)
+        public void SetBrushWidth(int new_width)
         {
             Drawable.Pen_Width = new_width;
         }
-        public void SetMarkerWidth(float new_width)
+        public void SetBrushWidth(float new_width)
         {
-            SetMarkerWidth((int)new_width);
+            SetBrushWidth((int)new_width);
         }
 
-        public int GetMarkerWidth()
+        public int GetBrushWidth()
         {
             return width;
         }
 
-        public void SetTransparency(float amount)
+        private void OnTriggerEnter(Collider other)
         {
-            Transparency = amount;
-            Color c = Drawable.Pen_Colour;
-            c.a = amount;
-            Drawable.Pen_Colour = c;
-        }
-
-
-        // Call these these to change the pen settings
-        public void SetMarkerRed()
-        {
-            Color c = Color.red;
-            c.a = Transparency;
-            SetMarkerColour(c);
-            Drawable.drawable.SetPenBrush();
-        }
-        public void SetMarkerGreen()
-        {
-            Color c = Color.green;
-            c.a = Transparency;
-            SetMarkerColour(c);
-            Drawable.drawable.SetPenBrush();
-        }
-        public void SetMarkerBlue()
-        {
-            Color c = Color.blue;
-            c.a = Transparency;
-            SetMarkerColour(c);
-            Drawable.drawable.SetPenBrush();
-        }
-        public void SetEraser()
-        {
-            SetMarkerColour(new Color(255f, 255f, 255f, 0f));
-        }
-
-        public void PartialSetEraser()
-        {
-            SetMarkerColour(new Color(255f, 255f, 255f, 0.5f));
+            if (other.tag == "Respawn")
+            {
+                cleanBrush();
+            }
         }
     }
 }
