@@ -1026,6 +1026,7 @@ GameObject:
   - component: {fileID: 2371822484544178796}
   - component: {fileID: 8455341798349239869}
   - component: {fileID: 5886119886181217288}
+  - component: {fileID: 8546110283287919853}
   m_Layer: 0
   m_Name: PaintPallet
   m_TagString: Untagged
@@ -1094,6 +1095,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8546110283287919853
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4791974075715708663}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 246255232734874047, guid: d151461227dcd4540851be8c1b6b6d06, type: 3}
 --- !u!1 &7073075797103987803
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,7 +1303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliding: []
   rotationOffset: 90
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: -0.0075, y: 0, z: 0}
 --- !u!1 &8984934192066252637
 GameObject:
   m_ObjectHideFlags: 0
