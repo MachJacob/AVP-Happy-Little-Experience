@@ -57,9 +57,9 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &4857771405823817547
 GameObject:
@@ -190,7 +190,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliding: []
-  brushOffset: 0.1
+  rotationOffset: 90
+  offset: {x: 0, y: 0, z: 0.1}
 --- !u!114 &6325688246876957472
 MonoBehaviour:
   m_ObjectHideFlags: 0
