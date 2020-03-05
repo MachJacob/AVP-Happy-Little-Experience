@@ -11,8 +11,7 @@ public class colourTrench : MonoBehaviour
         value
     }
     public SliderType slider;
-    [SerializeField]
-    float value;
+    float value = 1;
 
     public void OnCollisionStay(Collision collision)
     {
@@ -28,12 +27,15 @@ public class colourTrench : MonoBehaviour
             {
                 case SliderType.hue:
                     collision.transform.parent.GetComponent<FreeDraw.DrawingSettings>().setHue(value);
+                    transform.parent.GetComponent<ColourTrenchController>().setHue(value);
                     break;
                 case SliderType.saturation:
                     collision.transform.parent.GetComponent<FreeDraw.DrawingSettings>().setSaturation(value);
+                    transform.parent.GetComponent<ColourTrenchController>().setSaturation(value);
                     break;
                 case SliderType.value:
                     collision.transform.parent.GetComponent<FreeDraw.DrawingSettings>().setValue(value);
+                    transform.parent.GetComponent<ColourTrenchController>().setvalue(value);
                     break;
                 default:
                     break;
