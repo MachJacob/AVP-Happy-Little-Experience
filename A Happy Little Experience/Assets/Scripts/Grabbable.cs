@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrabBrush : MonoBehaviour
+public class Grabbable : MonoBehaviour
 {
     private GameObject childController;
     private bool held;
@@ -31,14 +31,14 @@ public class GrabBrush : MonoBehaviour
                 rotAxis = Vector3.forward;
                 rotMod = -1;
             }
-            
+
             transform.localRotation = Quaternion.AngleAxis(rotationOffset * rotMod, rotAxis);
             //childController.SetActive(false);
             held = true;
             transform.localPosition = offset;
             GetComponent<Rigidbody>().useGravity = false;
             GetComponent<Rigidbody>().isKinematic = true;
-            colliding[0].GetComponent<Grabber>().held = gameObject;
+            colliding[0].GetComponent<Grabber>().Grab(gameObject);
         }
         else if ((OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger) || Input.GetKeyDown(KeyCode.Backspace)) && !held && colliding[1] && !drop) //attach right
         {
@@ -55,7 +55,7 @@ public class GrabBrush : MonoBehaviour
             transform.localPosition = offset;
             GetComponent<Rigidbody>().useGravity = false;
             GetComponent<Rigidbody>().isKinematic = true;
-            colliding[1].GetComponent<Grabber>().held = gameObject;
+            colliding[1].GetComponent<Grabber>().Grab(gameObject);
         }
         drop = false;
     }

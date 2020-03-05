@@ -181,6 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grab: 0
   held: {fileID: 0}
+  right: 0
 --- !u!1 &715731044
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grab: 0
   held: {fileID: 0}
+  right: 0
 --- !u!1001 &926416000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -677,8 +679,35 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1851150695382273343, guid: 7c6529c173aa9e847be787a72a407beb,
+        type: 3}
+      propertyPath: rotationOffset
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1851150695382273343, guid: 7c6529c173aa9e847be787a72a407beb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7c6529c173aa9e847be787a72a407beb, type: 3}
+--- !u!1 &1084921384 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8620945853458017857, guid: 7c6529c173aa9e847be787a72a407beb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1084921383}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1084921385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084921384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e460bd323b687944a2eb5cd3f99086d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliding: []
+  rotationOffset: 90
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &1450413876
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,5 +1130,39 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3480060186373531856, guid: 07ee5abbac29489459a22375052f1186,
+        type: 3}
+      propertyPath: offset.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3480060186373531856, guid: 07ee5abbac29489459a22375052f1186,
+        type: 3}
+      propertyPath: rotationOffset
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07ee5abbac29489459a22375052f1186, type: 3}
+--- !u!1 &3480060186557703419 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4857771405823817547, guid: 07ee5abbac29489459a22375052f1186,
+    type: 3}
+  m_PrefabInstance: {fileID: 3480060186557703418}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3480060186557703420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3480060186557703419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd0b30768799d6e4183d994f674a2f55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childController: {fileID: 0}
+  held: 0
+  colliding: []
+  rotationOffset: 0
+  offset: {x: 0, y: 0, z: 0}
+  drop: 0

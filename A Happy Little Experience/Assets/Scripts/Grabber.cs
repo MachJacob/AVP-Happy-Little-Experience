@@ -6,7 +6,7 @@ public class Grabber : MonoBehaviour
 {
     public bool grab;
     public GameObject held;
-    private bool right;
+    public bool right;
 
     void Start()
     {
@@ -24,21 +24,26 @@ public class Grabber : MonoBehaviour
 
     void Update()
     {
-        if (held && right && (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger) || Input.GetKeyDown(KeyCode.Backspace)) && !grab)
+        if (grab)
         {
-            held.GetComponent<GrabBrush>().Drop();
+            grab = false;
+            return;
+        }
+        if (held && right && (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger) || Input.GetKeyDown(KeyCode.Backspace)))
+        {
+            held.GetComponent<Grabbable>().Drop();
             held = null;
         }
-        else if (held && !right && (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || Input.GetKeyDown(KeyCode.Return)) && !grab)
+        else if (held && !right && (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || Input.GetKeyDown(KeyCode.Return)))
         {
-            held.GetComponent<GrabBrush>().Drop();
+            held.GetComponent<Grabbable>().Drop();
             held = null;
         }
-        grab = false;
     }
 
-    public bool Grab()
+    public bool Grab(GameObject _grab)
     {
+        held = _grab;
         if (right)
         {
             grab = true;

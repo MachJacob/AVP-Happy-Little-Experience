@@ -186,7 +186,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4857771405823817547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecce71b468ee878438f08a7ada9bcb75, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e460bd323b687944a2eb5cd3f99086d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   colliding: []
@@ -205,6 +205,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 10
-  penColour: {r: 1, g: 0, b: 0, a: 1}
-  Transparency: 1
+  brushColour: {r: 1, g: 0, b: 0, a: 1}
+  is_clean: 1
   paint: {fileID: -1316836120494768905, guid: 11bef4eb25ab4414ba140851b53d7d0d, type: 3}
