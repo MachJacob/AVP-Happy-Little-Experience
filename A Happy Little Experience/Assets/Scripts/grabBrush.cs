@@ -24,7 +24,15 @@ public class GrabBrush : MonoBehaviour
         {
             transform.parent = colliding[0].transform;
             childController = colliding[0].transform.GetChild(0).gameObject;
-            transform.localRotation = Quaternion.AngleAxis(rotationOffset, Vector3.right);
+            float rotMod = 1;
+            Vector3 rotAxis = Vector3.right;
+            if (gameObject.name.Contains("Paint"))
+            {
+                rotAxis = Vector3.forward;
+                rotMod = -1;
+            }
+            
+            transform.localRotation = Quaternion.AngleAxis(rotationOffset * rotMod, rotAxis);
             //childController.SetActive(false);
             held = true;
             transform.localPosition = offset;
@@ -36,7 +44,12 @@ public class GrabBrush : MonoBehaviour
         {
             transform.parent = colliding[1].transform;
             childController = colliding[1].transform.GetChild(0).gameObject;
-            transform.localRotation = Quaternion.AngleAxis(rotationOffset, Vector3.right);
+            Vector3 rotAxis = Vector3.right;
+            if (gameObject.name.Contains("Paint"))
+            {
+                rotAxis = Vector3.forward;
+            }
+            transform.localRotation = Quaternion.AngleAxis(rotationOffset, rotAxis);
             //childController.SetActive(false);
             held = true;
             transform.localPosition = offset;
