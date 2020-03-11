@@ -5,7 +5,7 @@ using UnityEngine;
 public class Grabbable : MonoBehaviour
 {
     private GameObject childController;
-    private bool held;
+    public bool held;
     [SerializeField] private GameObject[] colliding;
     public float rotationOffset;
     public Vector3 offset;
