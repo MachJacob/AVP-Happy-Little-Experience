@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 3480060186373531868}
   - component: {fileID: 3480060186373531856}
   - component: {fileID: 6325688246876957472}
+  - component: {fileID: 2857576529958745972}
   m_Layer: 0
   m_Name: LowPoly_Brush
   m_TagString: Untagged
@@ -189,6 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e460bd323b687944a2eb5cd3f99086d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  held: 0
   colliding: []
   rotationOffset: 90
   offset: {x: 0, y: 0, z: 0.1}
@@ -208,3 +210,18 @@ MonoBehaviour:
   brushColour: {r: 1, g: 0, b: 0, a: 1}
   is_clean: 1
   paint: {fileID: -1316836120494768905, guid: 11bef4eb25ab4414ba140851b53d7d0d, type: 3}
+--- !u!114 &2857576529958745972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4857771405823817547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15edda3bff1e6964eb21639e31097fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start: {fileID: 0}
+  end: {fileID: 0}
+  travelTime: 2
