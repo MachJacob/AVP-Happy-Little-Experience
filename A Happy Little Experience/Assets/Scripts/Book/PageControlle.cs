@@ -19,11 +19,10 @@ public class PageControlle : MonoBehaviour
 
     public void OpenPage(PAGES openTo)
     {
-        //deactivate all pages
-        menu.SetActive(false);
-        stamps.SetActive(false);
-        saveload.SetActive(false);
-        colourpresets.SetActive(false);
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
         //reactivate only the required page
         switch (openTo)
         {
@@ -47,10 +46,6 @@ public class PageControlle : MonoBehaviour
 
     private void Start()
     {
-        //Activate only the menu
-        menu.SetActive(true);
-        stamps.SetActive(false);
-        saveload.SetActive(false);
-        colourpresets.SetActive(false);
+        OpenPage(PAGES.MENU);
     }
 }
