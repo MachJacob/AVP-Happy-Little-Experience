@@ -336,7 +336,7 @@ Transform:
   m_GameObject: {fileID: 1154392654440036563}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.15, y: 0, z: -0.02}
-  m_LocalScale: {x: 11, y: 1.3, z: 0.1}
+  m_LocalScale: {x: 10.8, y: 1.3, z: 0.1}
   m_Children: []
   m_Father: {fileID: 8513648980270179202}
   m_RootOrder: 1
@@ -413,7 +413,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: 1
-  value: 0
 --- !u!54 &1336628914
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -439,6 +438,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8513648980270179202}
+  - component: {fileID: 5145498766674207105}
   m_Layer: 0
   m_Name: sliders
   m_TagString: Untagged
@@ -463,6 +463,20 @@ Transform:
   m_Father: {fileID: 4753717954505022546}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &5145498766674207105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223869086850261901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bdb57f0252fc3846a2f231e0ff0d09e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saturationSlider: {fileID: 1154392654440036563}
+  valueSlider: {fileID: 8984934192066252637}
 --- !u!1 &1404746136018665096
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,7 +614,7 @@ Transform:
   m_GameObject: {fileID: 1955097753912572206}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.15, y: 1.93, z: -0.02}
-  m_LocalScale: {x: 11, y: 1.3, z: 0.1}
+  m_LocalScale: {x: 10.8, y: 1.3, z: 0.1}
   m_Children: []
   m_Father: {fileID: 8513648980270179202}
   m_RootOrder: 0
@@ -630,7 +644,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4e87178ab38dbf7449cb83ee6044fc94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -677,7 +691,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: 0
-  value: 0
 --- !u!54 &2007904542
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1334,7 +1347,7 @@ Transform:
   m_GameObject: {fileID: 8984934192066252637}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.15, y: -2.05, z: -0.02}
-  m_LocalScale: {x: 11, y: 1.3, z: 0.1}
+  m_LocalScale: {x: 10.8, y: 1.3, z: 0.1}
   m_Children: []
   m_Father: {fileID: 8513648980270179202}
   m_RootOrder: 2
@@ -1411,7 +1424,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: 2
-  value: 0
 --- !u!54 &501169268
 Rigidbody:
   m_ObjectHideFlags: 0
