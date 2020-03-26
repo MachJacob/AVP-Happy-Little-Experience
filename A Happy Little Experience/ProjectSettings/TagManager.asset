@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Brush
   - Anchor
+  - Other
   layers:
   - Default
   - TransparentFX
