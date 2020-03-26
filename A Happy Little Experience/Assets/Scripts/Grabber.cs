@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Grabber : MonoBehaviour
 {
-    public bool grab;
-    public GameObject held;
-    public bool right;
+    [SerializeField] private bool grab;
+    [SerializeField] private GameObject held;
+    [SerializeField] private bool right;
 
     void Start()
     {

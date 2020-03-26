@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class FloatingScript : MonoBehaviour
 {
-    public Transform start;
-    public Transform end;
-    public float travelTime;
+    [SerializeField] private Transform start;
+    [SerializeField] private Transform end;
+    [SerializeField] private float travelTime;
 
     // Use this for initialization
     void Start()
