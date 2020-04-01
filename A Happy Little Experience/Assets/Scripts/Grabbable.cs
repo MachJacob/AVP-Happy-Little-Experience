@@ -6,9 +6,9 @@ public class Grabbable : MonoBehaviour
 {
     private GameObject childController;
     public bool held;
-    [SerializeField] private GameObject[] colliding;
-    public float rotationOffset;
-    public Vector3 offset;
+    private GameObject[] colliding;
+    [SerializeField] private float rotationOffset;
+    [SerializeField] private Vector3 offset;
     private bool drop;
     // Start is called before the first frame update
     void Start()
@@ -39,6 +39,7 @@ public class Grabbable : MonoBehaviour
             GetComponent<Rigidbody>().useGravity = false;
             GetComponent<Rigidbody>().isKinematic = true;
             colliding[0].GetComponent<Grabber>().Grab(gameObject);
+            GetComponent<FloatingScript>().enabled = false;
         }
         else if ((OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger) || Input.GetKeyDown(KeyCode.Backspace)) && !held && colliding[1] && !drop) //attach right
         {
@@ -56,6 +57,7 @@ public class Grabbable : MonoBehaviour
             GetComponent<Rigidbody>().useGravity = false;
             GetComponent<Rigidbody>().isKinematic = true;
             colliding[1].GetComponent<Grabber>().Grab(gameObject);
+            GetComponent<FloatingScript>().enabled = false;
         }
         drop = false;
     }
