@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System.IO;
+using UnityEditor;
 
 namespace FreeDraw
 {
@@ -23,6 +25,8 @@ namespace FreeDraw
         public Brush_Function current_brush;
 
         public LayerMask Drawing_Layers;
+
+        public bool worldCanvas;
 
         public bool Reset_Canvas_On_Play = true;
         // The colour the canvas is reset to each time
@@ -188,6 +192,11 @@ namespace FreeDraw
             }
         }
 
+        public void OnCollisionEnter(Collision collision)
+        {
+            if(collision.transform.tag == "Br")
+        }
+
         // Set the colour of pixels in a straight line from start_point all the way to end_point, to ensure everything inbetween is coloured
         public void ColourBetween(Vector2 start_point, Vector2 end_point, int width, Color color)
         {
@@ -325,6 +334,35 @@ namespace FreeDraw
             // Should we reset our canvas image when we hit play in the editor?
             if (Reset_Canvas_On_Play)
                 ResetCanvas();
+        }
+
+        void SavePNG()
+        {
+            Texture2D SaveTexture(Texture2D texture, string filePath)
+            {
+                byte[] bytes = texture.EncodeToPNG();
+                FileStream stream = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.Write);
+                BinaryWriter writer = new BinaryWriter(stream);
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    writer.Write(bytes[i]);
+                }
+                writer.Close();
+                stream.Close();
+                DestroyImmediate(texture);
+                //I can't figure out how to import the newly created .png file as a texture
+                //AssetDatabase.Refresh();
+                Texture2D newTexture = (Texture2D)AssetDatabase.LoadAssetAtPath(filePath, typeof(Texture2D));
+                if (newTexture == null)
+                {
+                    Debug.Log("Couldn't Import");
+                }
+                else
+                {
+                    Debug.Log("Import Successful");
+                }
+                return newTexture;
+            }
         }
 
         void SetClearState()
