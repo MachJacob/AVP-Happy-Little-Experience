@@ -192,10 +192,7 @@ namespace FreeDraw
             }
         }
 
-        public void OnCollisionEnter(Collision collision)
-        {
-            if(collision.transform.tag == "Br")
-        }
+
 
         // Set the colour of pixels in a straight line from start_point all the way to end_point, to ensure everything inbetween is coloured
         public void ColourBetween(Vector2 start_point, Vector2 end_point, int width, Color color)
