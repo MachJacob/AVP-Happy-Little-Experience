@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 552958483401533132}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 0.97166663, z: 1}
   m_Children: []
@@ -341,13 +341,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4948260261013279627}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.00035719798, y: 0.0131307095, z: 0}
   m_LocalScale: {x: 100, y: 300, z: 100}
   m_Children: []
   m_Father: {fileID: 8140500135981996526}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &4679806430889310383
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -407,6 +407,7 @@ GameObject:
   - component: {fileID: 8140500135981996526}
   - component: {fileID: 3855760164578359290}
   - component: {fileID: 3855760164578359289}
+  - component: {fileID: 2616608681636806960}
   m_Layer: 0
   m_Name: Low_Poly Book
   m_TagString: Untagged
@@ -421,7 +422,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5090057580645919741}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 1.2093, y: 0.764, z: -0.353}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -430,7 +431,7 @@ Transform:
   - {fileID: 2120827102124358154}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!54 &3855760164578359290
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -461,6 +462,25 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
+--- !u!95 &2616608681636806960
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5090057580645919741}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: df064a4cb3afb024583e04b49cd10256, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6426064548068986895
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,6 +571,7 @@ GameObject:
   - component: {fileID: 7513920718517796699}
   - component: {fileID: 8047962533350335573}
   - component: {fileID: 5526880115709951143}
+  - component: {fileID: 901403614693403090}
   m_Layer: 0
   m_Name: Book_Pages - LeftPanel
   m_TagString: Untagged
@@ -565,7 +586,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6740677899656535130}
-  m_LocalRotation: {x: -0.8229023, y: -0, z: -0, w: 0.56818295}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.2118911e-11, y: 0.01688152, z: 0.00053848856}
   m_LocalScale: {x: 100, y: 300, z: 100}
   m_Children:
@@ -577,7 +598,7 @@ Transform:
   - {fileID: 2899135036126142104}
   m_Father: {fileID: 8140500135981996526}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -110.753, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8047962533350335573
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -626,6 +647,25 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!95 &901403614693403090
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6740677899656535130}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b49247cc18a77af4f9d091067a0bd615, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7999082289451570560
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,7 +691,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7999082289451570560}
-  m_LocalRotation: {x: -0.56616473, y: -0, z: -0, w: 0.8242921}
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0.0000000021012965, y: 0.016853143, z: -0.00051509263}
   m_LocalScale: {x: 100, y: 300, z: 100}
   m_Children:
@@ -659,7 +699,7 @@ Transform:
   - {fileID: 7089326017649563902}
   m_Father: {fileID: 8140500135981996526}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -68.966, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!33 &21791803598438737
 MeshFilter:
   m_ObjectHideFlags: 0
