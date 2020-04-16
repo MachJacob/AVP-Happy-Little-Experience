@@ -79,6 +79,8 @@ public class AT_SaveManager : MonoBehaviour
         save.position = saveable_objects.position;
         save.rotation = saveable_objects.rotation;
         save.scale = saveable_objects.scale;
+        save.colour = saveable_objects.colour;
+        save.material = saveable_objects.material;
         
        
 

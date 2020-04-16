@@ -20,6 +20,8 @@ public abstract class AT_Saveable_Objects : MonoBehaviour
     [SerializeField] public Vector3 position;
     [SerializeField] public Quaternion rotation;
     [SerializeField] public Vector3 scale;
+    [SerializeField] public Color colour;
+    [SerializeField] public Material material;
 
     void Start()
     {
@@ -31,7 +33,7 @@ public abstract class AT_Saveable_Objects : MonoBehaviour
        
     }
 
-    public virtual void Save(string _name, int _id , Vector3 _position, Quaternion _rotation, Vector3 _scale)
+    public virtual void Save(string _name, int _id , Vector3 _position, Quaternion _rotation, Vector3 _scale, Color _colour, Material _material)
     {
 
         id = _id;
@@ -47,6 +49,13 @@ public abstract class AT_Saveable_Objects : MonoBehaviour
 
         scale = _scale;
         scale.ToString();
+
+        colour = _colour;
+        colour.ToString();
+
+        material = _material;
+        material.ToString();
+
     }
 
     public virtual void Load(string[] values, int _id, Vector3 _position, Quaternion _rotation, Vector3 _scale)

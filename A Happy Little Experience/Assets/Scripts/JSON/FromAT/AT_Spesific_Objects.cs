@@ -16,11 +16,11 @@ public class AT_Spesific_Objects : AT_Saveable_Objects
         position = gameObject.transform.position;
     }
 
-    public override void Save(string _name, int _id, Vector3 _position, Quaternion _rotation, Vector3 _scale)
+    public override void Save(string _name, int _id, Vector3 _position, Quaternion _rotation, Vector3 _scale, Color _colour, Material _material)
     {
         position = _position;
         //_position = this.the_position.transform.localPosition;
-        base.Save(_name, _id, _position, _rotation, _scale);
+        base.Save(_name, _id, _position, _rotation, _scale, _colour, _material);
     }
 
     public override void Load(string[] values, int _id, Vector3 _position, Quaternion _rotation, Vector3 _scale)
