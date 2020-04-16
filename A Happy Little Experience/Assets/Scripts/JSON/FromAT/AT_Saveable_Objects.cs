@@ -21,11 +21,21 @@ public abstract class AT_Saveable_Objects : MonoBehaviour
     [SerializeField] public Quaternion rotation;
     [SerializeField] public Vector3 scale;
     [SerializeField] public Color colour;
-    [SerializeField] public Material material;
+    [SerializeField] public Color32[] cur_colors;
+    [SerializeField] public Material[] material;
+    [SerializeField] public Sprite drawable_sprite;
+    [SerializeField] public Texture2D drawable_texture2D;
+    //[SerializeField] public LayerMask Drawing_Layers;
+
+
+    protected Renderer rend;
 
     void Start()
     {
         AT_SaveManager.Instance.the_saveable_objects.Add(this);
+        rend = GetComponent<Renderer>();
+        rend.enabled = true;
+        rend.sharedMaterial = material[1];
     }
 
     void Update()
@@ -33,7 +43,9 @@ public abstract class AT_Saveable_Objects : MonoBehaviour
        
     }
 
-    public virtual void Save(string _name, int _id , Vector3 _position, Quaternion _rotation, Vector3 _scale, Color _colour, Material _material)
+    public virtual void Save(string _name, int _id , Vector3 _position, Quaternion _rotation, Vector3 _scale, 
+        Color _colour, Color32[] _cur_colours, Material _material,
+        Sprite _drawable_sprite, Texture2D _drawable_texture2D, LayerMask _drawing_layers)
     {
 
         id = _id;
@@ -53,8 +65,17 @@ public abstract class AT_Saveable_Objects : MonoBehaviour
         colour = _colour;
         colour.ToString();
 
-        material = _material;
+        cur_colors = _cur_colours;
+        cur_colors.ToString();
+
+        material[1] = _material;
         material.ToString();
+
+        drawable_sprite = _drawable_sprite;
+
+        drawable_texture2D = _drawable_texture2D;
+
+        //Drawing_Layers = _drawing_layers;
 
     }
 

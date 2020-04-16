@@ -126,16 +126,20 @@ public class AT_SaveManager : MonoBehaviour
 
             Debug.Log("-=-=-=-LOADED-=-=-=-=-");
 
-            int object_limit = saveable_objects.id;
+            //int object_limit = saveable_objects.id;
+
             saveable_objects.id = save.id;
             saveable_objects.transform.position = new Vector3(save.position.x, save.position.y, save.position.z);
             saveable_objects.transform.localScale = new Vector3(save.scale.x, save.scale.y, save.scale.z);
             saveable_objects.transform.rotation = new Quaternion(save.rotation.x, save.rotation.y, save.rotation.z, save.rotation.w);
+            saveable_objects.colour = save.colour;
+            saveable_objects.material = save.material;
 
-            for (int i = 0; i < object_limit ; i++)
-            {
 
-            }
+            //for (int i = 0; i < object_limit ; i++)
+            //{
+
+            //}
 
         }
         else
