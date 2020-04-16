@@ -22,7 +22,7 @@ public abstract class AT_Saveable_Objects : MonoBehaviour
     [SerializeField] public Vector3 scale;
     [SerializeField] public Color colour;
     [SerializeField] public Color32[] cur_colors;
-    [SerializeField] public Material[] material;
+    [SerializeField] public Material material;
     [SerializeField] public Sprite drawable_sprite;
     [SerializeField] public Texture2D drawable_texture2D;
     //[SerializeField] public LayerMask Drawing_Layers;
@@ -33,9 +33,6 @@ public abstract class AT_Saveable_Objects : MonoBehaviour
     void Start()
     {
         AT_SaveManager.Instance.the_saveable_objects.Add(this);
-        rend = GetComponent<Renderer>();
-        rend.enabled = true;
-        rend.sharedMaterial = material[1];
     }
 
     void Update()
@@ -47,6 +44,8 @@ public abstract class AT_Saveable_Objects : MonoBehaviour
         Color _colour, Color32[] _cur_colours, Material _material,
         Sprite _drawable_sprite, Texture2D _drawable_texture2D, LayerMask _drawing_layers)
     {
+
+        name = _name;
 
         id = _id;
         id.ToString();
@@ -68,7 +67,7 @@ public abstract class AT_Saveable_Objects : MonoBehaviour
         cur_colors = _cur_colours;
         cur_colors.ToString();
 
-        material[1] = _material;
+        material = _material;
         material.ToString();
 
         drawable_sprite = _drawable_sprite;

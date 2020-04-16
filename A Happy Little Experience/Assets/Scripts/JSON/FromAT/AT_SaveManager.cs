@@ -74,7 +74,7 @@ public class AT_SaveManager : MonoBehaviour
 
         }
 
-        
+        save.name = saveable_objects.name;
         save.id = saveable_objects.id;
         save.position = saveable_objects.position;
         save.rotation = saveable_objects.rotation;
@@ -128,6 +128,7 @@ public class AT_SaveManager : MonoBehaviour
 
             //int object_limit = saveable_objects.id;
 
+            saveable_objects.name = save.name;
             saveable_objects.id = save.id;
             saveable_objects.transform.position = new Vector3(save.position.x, save.position.y, save.position.z);
             saveable_objects.transform.localScale = new Vector3(save.scale.x, save.scale.y, save.scale.z);

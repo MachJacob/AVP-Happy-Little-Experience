@@ -16,7 +16,7 @@ public class AT_Save
     public Color colour;
     public Color32[] cur_colors;
 
-    public Material[] material; 
+    public Material material; 
     public Sprite drawable_sprite;
     public Texture2D drawable_texture2D;
 
@@ -34,7 +34,7 @@ public class AT_Save
         scale = _scale;
         colour = _colour;
         cur_colors = _cur_colours;
-        material[1] = _material;
+        material = _material;
         drawable_sprite = _drawable_sprite;
         drawable_texture2D = _drawable_texture2D;
         Drawing_Layers = _drawing_layers;
