@@ -9120,10 +9120,25 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 6a41fb6dcb5211d4391d0c20432bf3b2, type: 2}
+    - target: {fileID: 2835197852288739433, guid: 4e1f7f29dfc8bc945850f665e5c98761,
+        type: 3}
+      propertyPath: m_TagString
+      value: Tab2
+      objectReference: {fileID: 0}
     - target: {fileID: 5090057580645919741, guid: 4e1f7f29dfc8bc945850f665e5c98761,
         type: 3}
       propertyPath: m_Name
       value: Low_Poly Book
+      objectReference: {fileID: 0}
+    - target: {fileID: 6426064548068986895, guid: 4e1f7f29dfc8bc945850f665e5c98761,
+        type: 3}
+      propertyPath: m_TagString
+      value: Tab3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741723556462415707, guid: 4e1f7f29dfc8bc945850f665e5c98761,
+        type: 3}
+      propertyPath: m_TagString
+      value: Tab5
       objectReference: {fileID: 0}
     - target: {fileID: 8140500135981996526, guid: 4e1f7f29dfc8bc945850f665e5c98761,
         type: 3}
@@ -9179,6 +9194,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8237764317979764576, guid: 4e1f7f29dfc8bc945850f665e5c98761,
+        type: 3}
+      propertyPath: m_TagString
+      value: Tab1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8800207246450194795, guid: 4e1f7f29dfc8bc945850f665e5c98761,
+        type: 3}
+      propertyPath: m_TagString
+      value: Tab4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e1f7f29dfc8bc945850f665e5c98761, type: 3}

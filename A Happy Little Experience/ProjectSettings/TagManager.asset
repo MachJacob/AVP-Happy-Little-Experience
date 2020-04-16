@@ -9,11 +9,11 @@ TagManager:
   - Other
   - Brownie
   - Book
-  - tab1
-  - tab2
-  - tab3
-  - tab4
-  - tab5
+  - Tab1
+  - Tab2
+  - Tab3
+  - Tab4
+  - Tab5
   layers:
   - Default
   - TransparentFX
