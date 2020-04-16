@@ -10840,6 +10840,21 @@ PrefabInstance:
       propertyPath: TrailModule.enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3251196096220763679, guid: f12532244ec0b374eafd7d6ed0ed236c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3251196096220763679, guid: f12532244ec0b374eafd7d6ed0ed236c,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 892606063
+      objectReference: {fileID: 0}
+    - target: {fileID: 3251196096220763679, guid: f12532244ec0b374eafd7d6ed0ed236c,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f12532244ec0b374eafd7d6ed0ed236c, type: 3}
 --- !u!1 &3263708434736774566
