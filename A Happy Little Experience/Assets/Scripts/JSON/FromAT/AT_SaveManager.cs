@@ -128,6 +128,7 @@ public class AT_SaveManager : MonoBehaviour
             saveable_objects.id = save.id;
             saveable_objects.transform.position = new Vector3(save.position.x, save.position.y, save.position.z);
             saveable_objects.transform.localScale = new Vector3(save.scale.x, save.scale.y, save.scale.z);
+            saveable_objects.transform.rotation = new Quaternion(save.rotation.x, save.rotation.y, save.rotation.z, save.rotation.w);
 
             for (int i = 0; i < object_limit ; i++)
             {

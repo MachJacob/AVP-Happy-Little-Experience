@@ -4,6 +4,7 @@ using UnityEngine;
 
 enum ObjectTypes
 {
+    Cube,
     Tree,
     Cloud,
     Grass,
@@ -33,7 +34,6 @@ public abstract class AT_Saveable_Objects : MonoBehaviour
     public virtual void Save(string _name, int _id , Vector3 _position, Quaternion _rotation, Vector3 _scale)
     {
 
-        name = _name;
         id = _id;
         id.ToString();
 
@@ -59,5 +59,10 @@ public abstract class AT_Saveable_Objects : MonoBehaviour
         AT_SaveManager.Instance.the_saveable_objects.Remove(this);
         Destroy(gameObject);
     }
+
+    //private void ObjectString(this ObjectTypes objectType)
+    //{
+    //    objectType.ToString();
+    //}
 
 }
