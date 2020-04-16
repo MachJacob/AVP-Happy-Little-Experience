@@ -8,6 +8,12 @@ TagManager:
   - Anchor
   - Other
   - Brownie
+  - Book
+  - tab1
+  - tab2
+  - tab3
+  - tab4
+  - tab5
   layers:
   - Default
   - TransparentFX
