@@ -5,7 +5,7 @@ using UnityEngine;
 public class setStampPreviews : MonoBehaviour
 {
     public List<GameObject> slots;
-    public List<StampManager.Stamp> stamps = new List<StampManager.Stamp>();
+    List<StampManager.Stamp> stamps = new List<StampManager.Stamp>();
 
     // Start is called before the first frame update
     void Start()
