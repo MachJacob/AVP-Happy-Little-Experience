@@ -5,21 +5,25 @@ using UnityEngine;
 public class setStampPreviews : MonoBehaviour
 {
     public List<GameObject> slots;
-    public List<Sprite> textures;
+    public List<StampManager.Stamp> stamps = new List<StampManager.Stamp>();
 
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < textures.Count; i++)
+        UpdateStampPage();
+    }
+
+    public void UpdateStampPage()
+    {
+        for (int i = 0; i < stamps.Count && i < slots.Count; i++)
         {
-            slots[i].GetComponent<BoxCollider>().enabled = true;
-            Instantiate(new SpriteRenderer(), slots[i].transform).sprite = textures[i];
+            slots[i].GetComponent<SelectStamp>().SetStamp(stamps[i]);
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddStampPreview(StampManager.Stamp NewStamp)
     {
-        
+        stamps.Add(NewStamp);
+        UpdateStampPage();
     }
 }
