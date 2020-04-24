@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SelectStamp : MonoBehaviour
 {
-    [SerializeField] StampManager stampManager;
-    [SerializeField] StampManager.Stamp stamp;
+    StampManager stampManager;
+    StampManager.Stamp stamp;
 
     private void Start()
     {

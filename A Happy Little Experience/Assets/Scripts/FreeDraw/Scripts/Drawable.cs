@@ -182,6 +182,8 @@ namespace FreeDraw
         {
             if (collision.transform.tag == "Brush")
             {
+                if (collision.transform.parent.gameObject.GetComponent<DrawingSettings>().is_clean)
+                    return;
                 Pen_Colour = collision.transform.parent.gameObject.GetComponent<DrawingSettings>().GetBrushColour();
                 Pen_Width = collision.transform.parent.gameObject.GetComponent<DrawingSettings>().GetBrushWidth();
                 foreach (ContactPoint contact in collision.contacts)

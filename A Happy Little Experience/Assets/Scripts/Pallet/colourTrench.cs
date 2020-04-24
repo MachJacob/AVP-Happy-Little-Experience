@@ -13,6 +13,12 @@ public class colourTrench : MonoBehaviour
     public SliderType slider;
     float value = 1;
 
+    private void Update()
+    {
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.Euler(0, 0, 0);
+    }
+
     public void OnCollisionStay(Collision collision)
     {
         if (collision.transform.tag == "Brush")

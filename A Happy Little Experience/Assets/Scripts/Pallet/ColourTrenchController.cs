@@ -39,6 +39,6 @@ public class ColourTrenchController : MonoBehaviour
     {
         Texture2D tex = UnityLibrary.GradientTextureMaker.Create(colours);
         Material mat = slider.GetComponent<MeshRenderer>().material;
-        mat.mainTexture = tex;
+        mat.SetTexture("_BaseColorMap", tex);
     }
 }

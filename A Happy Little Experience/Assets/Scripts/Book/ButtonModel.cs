@@ -22,7 +22,7 @@ public class ButtonModel : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(!held)
+        if(!held && other.tag == "Brush")
             held = true;
             StartCoroutine(holdButton());
     }
