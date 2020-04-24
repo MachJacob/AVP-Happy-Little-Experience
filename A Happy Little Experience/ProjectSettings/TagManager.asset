@@ -9,6 +9,12 @@ TagManager:
   - Other
   - StampPreview
   - Brownie
+  - Book
+  - Tab1
+  - Tab2
+  - Tab3
+  - Tab4
+  - Tab5
   layers:
   - Default
   - TransparentFX
@@ -18,7 +24,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - 1
   - 
   - 
   - 
@@ -45,4 +51,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 1
+    uniqueID: 892606063
     locked: 0
