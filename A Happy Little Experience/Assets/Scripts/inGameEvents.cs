@@ -9,7 +9,7 @@ public class inGameEvents : MonoBehaviour
     public static bool isHighfive;
     public GameObject sparkles;
     public GameObject hand;
-    int state;
+    public static int state;
     //public bool isPointing;
     // Start is called before the first frame update
     void Start()
@@ -20,15 +20,14 @@ public class inGameEvents : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(state == (int)States.StartofGame)
+        if(state == (int)GameStates.Tutorial)
         {
             StartCoroutine(WelcomeToGame());
             //play brownie's first line
         }
         if(startPointEvent)
         {
-            StartCoroutine(StartPoint());
-            
+            StartCoroutine(StartPoint());     
         }
 
         if(Highfive.isHighfive)
@@ -36,13 +35,14 @@ public class inGameEvents : MonoBehaviour
             Instantiate(sparkles, (hand.transform));
             //insert YAY! sound effect for brownie
             //"Looks great!"
-            anim_brownie.SetInteger("State", 3);
+            anim_brownie.SetInteger("State", (int)BrownieStates.EndPoint);
         }
     }
 
    IEnumerator WelcomeToGame()
     {
         //play welcome to the game sound clip
+        Debug.Log("Hey there! Welcome to your Happy Little Experience! I'm Brownie, nice to meet ya!");
         yield return new WaitForSeconds(10F); //time to be decided when i record voice.. lol
         //play the clip that introduces the sketchbook
         yield return new WaitForSeconds(10f);
@@ -54,18 +54,35 @@ public class inGameEvents : MonoBehaviour
 
     IEnumerator StartPoint()
     {
-        anim_brownie.SetInteger("State", 1);
+        anim_brownie.SetInteger("State", (int)BrownieStates.StartPoint);
         yield return new WaitForSeconds(1f);
-        anim_brownie.SetInteger("State", 2);
+        anim_brownie.SetInteger("State", (int)BrownieStates.MiddlePoint);
         startPointEvent = false;
     }
 
 }
-public enum States
+public enum GameStates
 {
-    StartofGame,
+    Tutorial,
+    DrawSky,
+
+
+}
+
+public enum BrownieStates
+{
+    Idle,
     StartPoint,
     MiddlePoint,
     EndPoint,
+}
 
+public enum BookStates
+{
+    Closed,
+    Tab1,
+    Tab2,
+    Tab3,
+    Tab4,
+    Tab5
 }
