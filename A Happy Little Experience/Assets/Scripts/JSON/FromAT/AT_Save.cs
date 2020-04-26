@@ -14,6 +14,7 @@ public class AT_Save
     public Vector3 scale;
 
     public Color colour;
+    public Color pen_colour;
     public Color32[] cur_colors;
 
     public Material material; 
@@ -23,7 +24,7 @@ public class AT_Save
     public LayerMask Drawing_Layers;
 
     public void init(string _name, int _id, Transform _transform, Vector3 _position, 
-        Quaternion _rotation, Vector3 _scale, Color _colour, Color32[] _cur_colours ,Material _material, 
+        Quaternion _rotation, Vector3 _scale, Color _colour, Color _pen_colour, Color32[] _cur_colours ,Material _material, 
         Sprite _drawable_sprite, Texture2D _drawable_texture2D, LayerMask _drawing_layers)
     {
         name = _name;
@@ -33,6 +34,7 @@ public class AT_Save
         rotation = _rotation;
         scale = _scale;
         colour = _colour;
+        pen_colour = _pen_colour;
         cur_colors = _cur_colours;
         material = _material;
         drawable_sprite = _drawable_sprite;
