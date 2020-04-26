@@ -323,15 +323,16 @@ MonoBehaviour:
   objectType: 0
   name: 
   id: 0
-  the_transform: {fileID: 749863391}
+  current_object: {fileID: 749863391}
   position: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 0}
   scale: {x: 0, y: 0, z: 0}
-  colour: {r: 1, g: 0, b: 0, a: 1}
+  colour: {r: 0, g: 0, b: 0, a: 1}
   cur_colors: []
-  material: []
+  material: {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
   drawable_sprite: {fileID: 0}
   drawable_texture2D: {fileID: 0}
+  new_mat: {fileID: 0}
 --- !u!1 &862777249
 GameObject:
   m_ObjectHideFlags: 0
