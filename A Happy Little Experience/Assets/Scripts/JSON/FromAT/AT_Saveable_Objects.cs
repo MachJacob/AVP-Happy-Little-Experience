@@ -76,6 +76,7 @@ public abstract class AT_Saveable_Objects : MonoBehaviour
 
         drawable_texture2D = _drawable_texture2D;
 
+
         //Drawing_Layers = _drawing_layers;
 
     }

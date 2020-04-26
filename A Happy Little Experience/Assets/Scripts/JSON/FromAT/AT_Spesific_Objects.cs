@@ -17,12 +17,18 @@ public class AT_Spesific_Objects : AT_Saveable_Objects
 
     void Update()
     {
+        current_object = this.gameObject;
+
         position = gameObject.transform.position;
         rotation = gameObject.transform.rotation;
         scale = gameObject.transform.localScale;
-        current_object = this.gameObject;
+        
         current_object.GetComponent<Renderer>().material = material;
-        current_object.GetComponent<SpriteRenderer>().sprite = drawable_sprite;
+
+        //current_object.GetComponent<SpriteRenderer>().sprite = drawable_sprite;
+
+        //current_object.GetComponent<Renderer>().material.SetTexture("drawable_texture", drawable_texture2D);
+        //current_object.GetComponent<Renderer>().material.mainTexture = drawable_texture2D;
     }
 
     public override void Save(string _name, int _id, GameObject _current_object, Vector3 _position, Quaternion _rotation,

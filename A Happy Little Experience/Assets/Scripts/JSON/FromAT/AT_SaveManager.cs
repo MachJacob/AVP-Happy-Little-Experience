@@ -85,6 +85,7 @@ public class AT_SaveManager : MonoBehaviour
         save.new_material = saveable_objects.new_mat;
 
         save.drawable_sprite = saveable_objects.drawable_sprite;
+        save.drawable_texture2D = saveable_objects.drawable_texture2D;
         
        
 
@@ -143,6 +144,7 @@ public class AT_SaveManager : MonoBehaviour
             saveable_objects.new_mat = save.new_material;
 
             saveable_objects.drawable_sprite = save.drawable_sprite;
+            saveable_objects.drawable_texture2D = save.drawable_texture2D;
 
 
             //for (int i = 0; i < object_limit ; i++)
