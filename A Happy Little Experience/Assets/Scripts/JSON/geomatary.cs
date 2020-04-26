@@ -39,16 +39,6 @@ public class geomatary : MonoBehaviour
 
     void Update()
     {
-        cube_positions = this.gameObject.transform.position;
 
-        moveH = Input.GetAxisRaw("Horizontal") * moveSpeed;
-        moveV = Input.GetAxisRaw("Vertical") * moveSpeed;
-        cube_positions = new Vector2(moveH, moveV);
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("DIE!!!!!!!!!!!!!!!!");
-            Destroy(cube);
-        }
     }
 }
