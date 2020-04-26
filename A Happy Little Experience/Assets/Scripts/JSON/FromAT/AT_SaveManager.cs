@@ -83,6 +83,8 @@ public class AT_SaveManager : MonoBehaviour
         save.colour = saveable_objects.colour;
         save.material = saveable_objects.material;
         save.new_material = saveable_objects.new_mat;
+
+        save.drawable_sprite = saveable_objects.drawable_sprite;
         
        
 
@@ -139,6 +141,8 @@ public class AT_SaveManager : MonoBehaviour
             saveable_objects.colour = save.colour;
             saveable_objects.material = save.material;
             saveable_objects.new_mat = save.new_material;
+
+            saveable_objects.drawable_sprite = save.drawable_sprite;
 
 
             //for (int i = 0; i < object_limit ; i++)

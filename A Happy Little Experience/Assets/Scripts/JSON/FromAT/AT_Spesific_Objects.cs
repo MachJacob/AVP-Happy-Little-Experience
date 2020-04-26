@@ -22,6 +22,7 @@ public class AT_Spesific_Objects : AT_Saveable_Objects
         scale = gameObject.transform.localScale;
         current_object = this.gameObject;
         current_object.GetComponent<Renderer>().material = material;
+        current_object.GetComponent<SpriteRenderer>().sprite = drawable_sprite;
     }
 
     public override void Save(string _name, int _id, GameObject _current_object, Vector3 _position, Quaternion _rotation,
