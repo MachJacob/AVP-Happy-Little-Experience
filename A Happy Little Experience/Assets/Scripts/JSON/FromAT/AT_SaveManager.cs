@@ -76,11 +76,16 @@ public class AT_SaveManager : MonoBehaviour
 
         save.name = saveable_objects.name;
         save.id = saveable_objects.id;
+        save.current_object = saveable_objects.current_object;
         save.position = saveable_objects.position;
         save.rotation = saveable_objects.rotation;
         save.scale = saveable_objects.scale;
         save.colour = saveable_objects.colour;
         save.material = saveable_objects.material;
+        save.new_material = saveable_objects.new_mat;
+
+        save.drawable_sprite = saveable_objects.drawable_sprite;
+        save.drawable_texture2D = saveable_objects.drawable_texture2D;
         
        
 
@@ -130,11 +135,16 @@ public class AT_SaveManager : MonoBehaviour
 
             saveable_objects.name = save.name;
             saveable_objects.id = save.id;
+            saveable_objects.current_object = save.current_object;
             saveable_objects.transform.position = new Vector3(save.position.x, save.position.y, save.position.z);
             saveable_objects.transform.localScale = new Vector3(save.scale.x, save.scale.y, save.scale.z);
             saveable_objects.transform.rotation = new Quaternion(save.rotation.x, save.rotation.y, save.rotation.z, save.rotation.w);
             saveable_objects.colour = save.colour;
             saveable_objects.material = save.material;
+            saveable_objects.new_mat = save.new_material;
+
+            saveable_objects.drawable_sprite = save.drawable_sprite;
+            saveable_objects.drawable_texture2D = save.drawable_texture2D;
 
 
             //for (int i = 0; i < object_limit ; i++)
