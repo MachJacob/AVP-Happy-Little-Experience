@@ -15,7 +15,6 @@ public class colourTrench : MonoBehaviour
 
     private void Update()
     {
-        transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.Euler(0, 0, 0);
     }
 

@@ -15,6 +15,7 @@ public class StampManager : MonoBehaviour
     public GameObject stamePagePrefab;
     public GameObject stampViewer;
     public GameObject stampPrefab;
+    public GameObject stampSpawn;
     StampData viewedStamp;
 
     List<GameObject> stampPages = new List<GameObject>();
@@ -110,7 +111,7 @@ public class StampManager : MonoBehaviour
             Destroy(item);
         }
 
-        GameObject newStamp = Instantiate(stampPrefab);
+        GameObject newStamp = Instantiate(stampPrefab,stampSpawn.transform.position, stampSpawn.transform.rotation);
         newStamp.GetComponent<Stamp>().tex = viewedStamp.mat;
         newStamp.GetComponent<Stamp>().obj = viewedStamp.obj;
     }
