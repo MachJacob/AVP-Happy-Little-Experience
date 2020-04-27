@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: d757d85bf059bde4ea7ad75419a1090e
 ModelImporter:
-  serializedVersion: 26
+  serializedVersion: 19300
   internalIDToNameTable:
   - first:
       74: -88723805440604879
@@ -12,9 +12,14 @@ ModelImporter:
   - first:
       74: 4372184618834679938
     second: Cylinder|CylinderAction.002
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Table
+    second: {fileID: 2100000, guid: fd6b0bee0f8e45a4b9427ec755469c38, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -165,7 +170,6 @@ ModelImporter:
     normalSmoothingSource: 0
   referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -183,8 +187,10 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
