@@ -22,13 +22,13 @@ namespace FreeDraw
 
         private void Update()
         {
-            paint.color = brushColour;
+            paint.SetColor("_BaseColor", brushColour);
         }
 
         public void cleanBrush()
         {
             is_clean = true;
-            paint.color = Color.white;
+            brushColour = Color.white;
         }
 
         public void setHue(float _hue)
