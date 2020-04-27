@@ -3000,13 +3000,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3576953bc271a08448ebf454e0c8a7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stampViewer: {fileID: 6410764003521283547}
   stamePagePrefab: {fileID: 7671296393389842422, guid: f6a0da2d93bb8fd4299a6f85d5be7814,
+    type: 3}
+  stampViewer: {fileID: 6410764003521283547}
+  stampPrefab: {fileID: 3277422039427044040, guid: c0fe7b61144bc0b4a9536867cfd03eff,
     type: 3}
   stamps:
   - tex: {fileID: 2800000, guid: fcb91310acbe1a941a2915d8436697bc, type: 3}
     mat: {fileID: 2100000, guid: f248a41902a0c8141b51683a69733dd0, type: 2}
-    mesh: {fileID: 8625290327840942402, guid: 7febb105cb1160b4bb0799ff9ca5b76a, type: 3}
+    mesh: {fileID: -927199367670048503, guid: 7febb105cb1160b4bb0799ff9ca5b76a, type: 3}
 --- !u!1 &3484705468748309782
 GameObject:
   m_ObjectHideFlags: 0
@@ -3939,7 +3941,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &866093246215157670
 Transform:
   m_ObjectHideFlags: 0
@@ -4197,7 +4199,7 @@ MonoBehaviour:
   triggerButton:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3422275947238736437}
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
