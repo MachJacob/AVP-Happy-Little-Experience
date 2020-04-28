@@ -9,11 +9,17 @@ public class PageControlle : MonoBehaviour
         MENU,
         STAMPS,
         SAVELOAD,
-        CLOURPRESETS
+        CLOURPRESETS,
+        VOLUME,
+        QUIT
     }
 
     public GameObject menuFront;
     public GameObject menuBack;
+    public GameObject volumeMenuFront;
+    public GameObject volumeMenuBack;
+    public GameObject quitMenuFront;
+    public GameObject quitMenuBack;
     public GameObject stampsFront;
     public GameObject stampsBack;
     public GameObject saveloadFront;
@@ -25,6 +31,10 @@ public class PageControlle : MonoBehaviour
     {
         menuFront.SetActive(false);
         menuBack.SetActive(false);
+        volumeMenuFront.SetActive(false);
+        volumeMenuBack.SetActive(false);
+        quitMenuFront.SetActive(false);
+        quitMenuBack.SetActive(false);
         stampsFront.SetActive(false);
         stampsBack.SetActive(false);
         saveloadFront.SetActive(false);
@@ -51,6 +61,14 @@ public class PageControlle : MonoBehaviour
                 colourpresetsFront.SetActive(true);
                 colourpresetsBack.SetActive(true);
                 break;
+            case PAGES.VOLUME:
+                volumeMenuFront.SetActive(true);
+                volumeMenuBack.SetActive(true);
+                break;
+            case PAGES.QUIT:
+                quitMenuFront.SetActive(true);
+                quitMenuBack.SetActive(true);
+                break;
             default:
                 menuFront.SetActive(true);
                 menuBack.SetActive(true);
@@ -60,6 +78,18 @@ public class PageControlle : MonoBehaviour
 
     private void Start()
     {
+        PageToMenu();
+    }
+    public void PageToMenu()
+    {
         OpenPage(PAGES.MENU);
+    }
+    public void PageToVolume()
+    {
+        OpenPage(PAGES.VOLUME);
+    }
+    public void PageToQuit()
+    {
+        OpenPage(PAGES.QUIT);
     }
 }
