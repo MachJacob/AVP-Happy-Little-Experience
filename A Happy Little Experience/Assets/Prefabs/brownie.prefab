@@ -1371,8 +1371,8 @@ GameObject:
   - component: {fileID: 1970045769506146247}
   - component: {fileID: 1970045769506146245}
   - component: {fileID: 1970045769506146248}
-  - component: {fileID: 1970045769506146249}
   - component: {fileID: 4129384497510905447}
+  - component: {fileID: 4799385614544009345}
   m_Layer: 0
   m_Name: brownie
   m_TagString: Brownie
@@ -1463,50 +1463,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 570519f1dc4b954458103796722a6490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1970045769506146249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6288222261433950824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62a3b5a68b8ccec439700f4e92175252, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startPointEvent: 0
-  sparkles: {fileID: 3251196096220763672, guid: f12532244ec0b374eafd7d6ed0ed236c,
-    type: 3}
-  brownieNarration:
-  - {fileID: 8300000, guid: bed3dba67b833a141bc3a671dc26da8c, type: 3}
-  - {fileID: 8300000, guid: 6a0545e2b6b060e46ada3cfcb4dee668, type: 3}
-  - {fileID: 8300000, guid: 8e2a874813d5d9a4cb281efd303a0dd3, type: 3}
-  - {fileID: 8300000, guid: 2f76b34d6a8a3fb4ea23a097eeb0117b, type: 3}
-  - {fileID: 8300000, guid: c3311f02b7abd894eac75782a2f0ee58, type: 3}
-  - {fileID: 8300000, guid: b2aeb2fc20e94d94f9cf08fe2772fbc5, type: 3}
-  - {fileID: 8300000, guid: 062d434f73e68064d978040ab24e9d0b, type: 3}
-  - {fileID: 8300000, guid: b8ff3fcb2c734854797700dca339b98a, type: 3}
-  - {fileID: 8300000, guid: 123ac7f0f857b014794cf5bac3242994, type: 3}
-  - {fileID: 8300000, guid: 0d27a390f3ea41942806f731276243f3, type: 3}
-  - {fileID: 8300000, guid: 80e495761d5352249af30a2f7755f288, type: 3}
-  - {fileID: 8300000, guid: ec54196bdcf423a45a4e0cf9e9830e3e, type: 3}
-  - {fileID: 8300000, guid: 7c5b7b4dab2566b4e899799ebf5a50e2, type: 3}
-  - {fileID: 8300000, guid: 0f3657ddc4fc5ce47aca5b2e18b89a39, type: 3}
-  - {fileID: 8300000, guid: 1b69faaf408f4b04e8821f0b410f6ca0, type: 3}
-  - {fileID: 8300000, guid: 6db2a8c1818e416408af7ba9fa13ccbd, type: 3}
-  - {fileID: 8300000, guid: 484090adaa6d4774e8c482ac1284635e, type: 3}
-  - {fileID: 8300000, guid: 6b916b1f40f1bae44a06bc4097827990, type: 3}
-  - {fileID: 8300000, guid: 6e6beeb4e8b121748ac0ec72b8fb2775, type: 3}
-  - {fileID: 8300000, guid: 3106f7e6396fab649bed74ac19a6e1c4, type: 3}
-  - {fileID: 8300000, guid: 5957a9c8ae1228141b503f1740941356, type: 3}
-  - {fileID: 8300000, guid: d8ffbd650e4385548a6d8d6ab5553cba, type: 3}
-  - {fileID: 8300000, guid: 481d6fd2bea75d742a90d13871189355, type: 3}
-  - {fileID: 8300000, guid: 02aa601981dd8694bb6d9c5691d8bbb7, type: 3}
-  - {fileID: 8300000, guid: 43682a6444162e94eb19b540a7c33a34, type: 3}
-  - {fileID: 8300000, guid: 72d7d65ee4d00ee47a76dd02fadcf414, type: 3}
-  - {fileID: 8300000, guid: d06f7320e55d2b1479ce5f85f993c69c, type: 3}
-  brownie: {fileID: 0}
 --- !u!82 &4129384497510905447
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1528,7 +1484,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 200
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1563,7 +1519,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.306
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1578,7 +1534,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.06944445
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1603,6 +1559,49 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4799385614544009345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6288222261433950824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62a3b5a68b8ccec439700f4e92175252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPointEvent: 0
+  sparkles: {fileID: 3251196096220763672, guid: f12532244ec0b374eafd7d6ed0ed236c,
+    type: 3}
+  brownieNarration:
+  - {fileID: 8300000, guid: 7463c8a96d4b59249a68b0d75289e7fd, type: 3}
+  - {fileID: 8300000, guid: 246fb2f7cee90c0488d072a15c461867, type: 3}
+  - {fileID: 8300000, guid: 892b418bb794cc8469fb2515eba3bacb, type: 3}
+  - {fileID: 8300000, guid: 6e876e89132ff644aaf0d41e77388fba, type: 3}
+  - {fileID: 8300000, guid: 68aac2db595756445b2fca679023fc63, type: 3}
+  - {fileID: 8300000, guid: 5d6c7d1d44779054abe0219e8a968bcf, type: 3}
+  - {fileID: 8300000, guid: 6d284461a3364d4439949ae0ad3e54ac, type: 3}
+  - {fileID: 8300000, guid: b07a82506c8a9b445b8e96ec10b6fd2e, type: 3}
+  - {fileID: 8300000, guid: 0affd95bd6bfac34587151b85f37a52b, type: 3}
+  - {fileID: 8300000, guid: 10814ee09d86290468a3fdd8fa94a928, type: 3}
+  - {fileID: 8300000, guid: dac5d4126f03e5a4d9a8ccb4ca2f850c, type: 3}
+  - {fileID: 8300000, guid: 3f0e04c8b29db0d4ca46caec078ab8b0, type: 3}
+  - {fileID: 8300000, guid: 43589d6a731af8e479ba15a726c322e4, type: 3}
+  - {fileID: 8300000, guid: 0aa1433870664634eb2a535e9c185882, type: 3}
+  - {fileID: 8300000, guid: 8f13964ea1ce07b46af4cc5c4ceee230, type: 3}
+  - {fileID: 8300000, guid: bcdb8df3ef214554d97a7d7cf34f3c7e, type: 3}
+  - {fileID: 8300000, guid: fe2e66c6b5c5e3945af6a40a8f99005c, type: 3}
+  - {fileID: 8300000, guid: 0a8b5be849021144491c5386ba5cf2a2, type: 3}
+  - {fileID: 8300000, guid: 6e0a01e7a94756c4fb7cd4788c9556ab, type: 3}
+  - {fileID: 8300000, guid: 5ed598554edff7e4cb31bfabb8bac66d, type: 3}
+  - {fileID: 8300000, guid: cdeaf9faa9f669c42bc2f375322be669, type: 3}
+  - {fileID: 8300000, guid: 1d13b543ed6e4414181772e43dd4b075, type: 3}
+  - {fileID: 8300000, guid: 74240df863b1e954984b9d44e4d78b74, type: 3}
+  - {fileID: 8300000, guid: 151df56e3415f954b8b9d7ca301d86e3, type: 3}
+  - {fileID: 8300000, guid: e038578c527873d4b81e84bf22559ac6, type: 3}
+  - {fileID: 8300000, guid: f17c9ed6fd29727409fae037a87d6a27, type: 3}
+  brownie: {fileID: 6288222261433950824}
 --- !u!1 &6717831759147356263
 GameObject:
   m_ObjectHideFlags: 0

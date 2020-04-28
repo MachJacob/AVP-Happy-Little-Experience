@@ -54,6 +54,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -134,6 +135,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -170,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ad99bbe03201b45bf317eb10139be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colour: {r: 0.7372549, g: 0.08235294, b: 0.427451, a: 1}
+  duration_of_lerp: 0
 --- !u!64 &7099765722953997905
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -241,6 +243,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -277,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ad99bbe03201b45bf317eb10139be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colour: {r: 0.14901961, g: 0.19215688, b: 0.7411765, a: 1}
+  duration_of_lerp: 0
 --- !u!64 &7397920448936616972
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -348,6 +351,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -384,7 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ad99bbe03201b45bf317eb10139be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colour: {r: 0.023529414, g: 0.31764707, b: 0.3137255, a: 1}
+  duration_of_lerp: 0
 --- !u!64 &8005569091580366398
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -497,6 +501,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -533,7 +538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ad99bbe03201b45bf317eb10139be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colour: {r: 0.17254902, g: 0.8313726, b: 0.1254902, a: 1}
+  duration_of_lerp: 0
 --- !u!64 &383526709931054671
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -604,6 +609,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -640,7 +646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ad99bbe03201b45bf317eb10139be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colour: {r: 0.21960786, g: 0.20392159, b: 0.21176472, a: 1}
+  duration_of_lerp: 0
 --- !u!64 &1018752671175629681
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -711,6 +717,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -747,7 +754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ad99bbe03201b45bf317eb10139be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colour: {r: 0.039215688, g: 0.039215688, b: 0.039215688, a: 1}
+  duration_of_lerp: 0
 --- !u!64 &1728402242618414809
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -818,6 +825,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -854,7 +862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ad99bbe03201b45bf317eb10139be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colour: {r: 0.18431373, g: 0.07450981, b: 0.70980394, a: 1}
+  duration_of_lerp: 0
 --- !u!64 &2468335942022801353
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -925,6 +933,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -961,7 +970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ad99bbe03201b45bf317eb10139be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colour: {r: 0.882353, g: 0.90196085, b: 0.08627451, a: 1}
+  duration_of_lerp: 0
 --- !u!64 &2331454394581184081
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1032,6 +1041,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1068,7 +1078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ad99bbe03201b45bf317eb10139be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colour: {r: 0.8352942, g: 0.24313727, b: 0.078431375, a: 1}
+  duration_of_lerp: 0
 --- !u!64 &3098101244146960992
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1139,6 +1149,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1175,7 +1186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ad99bbe03201b45bf317eb10139be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colour: {r: 1, g: 1, b: 1, a: 1}
+  duration_of_lerp: 0
 --- !u!64 &3887576633292045135
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1246,6 +1257,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1282,7 +1294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ad99bbe03201b45bf317eb10139be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colour: {r: 0.6509804, g: 0.10196079, b: 0.09019608, a: 1}
+  duration_of_lerp: 0
 --- !u!64 &3881843210519471164
 MeshCollider:
   m_ObjectHideFlags: 0

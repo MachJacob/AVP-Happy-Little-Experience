@@ -76,12 +76,17 @@ public class Grabbable : MonoBehaviour
             }
         }
 
-        if (other.gameObject.tag == "Palette")
+        if (other.gameObject.tag == "Palette" && inGameEvents.state == (int)GameStates.Pallet)
         {
             inGameEvents.pInteract = true;
         }
 
-     }
+        if (other.gameObject.tag == "Book" && inGameEvents.state == (int)GameStates.Sketchbook)
+        {
+            inGameEvents.sInteract = true;
+        }
+
+    }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Anchor")

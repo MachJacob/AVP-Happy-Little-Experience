@@ -14,8 +14,16 @@ public class inGameEvents : MonoBehaviour
     AudioSource audioSource;
     public AudioClip[] brownieNarration;
     public GameObject brownie;
-    IEnumerator welcome;
     public static bool pInteract;
+    public static bool sInteract;
+    public static bool tab1Interact;
+    public static bool tab1Interact;
+    public static bool tab1Interact;
+    public static bool tab1Interact;
+    bool go;
+    public ParticleSystem sparkles2;
+    public GameObject pallete;
+    public GameObject sketchbook;
     
 
     //public bool isPointing;
@@ -25,19 +33,35 @@ public class inGameEvents : MonoBehaviour
         anim_brownie = brownie.GetComponent<Animator>();
         audioSource = brownie.GetComponent<AudioSource>();
         hand = GameObject.FindGameObjectWithTag("Highfive");
-        welcome = WelcomeToGame();
-
+        state = (int)GameStates.Welcome;
+        go = true;
     }
     
 
     // Update is called once per frame
     private void Update()
     {
-        if (GameManager.isTips && state == (int)GameStates.Welcome)
+        if (GameManager.isTips && state == (int)GameStates.Welcome && go)
         {
+            go = false;
             StartCoroutine(WelcomeToGame());
             //play brownie's first line
         }
+        if (state == (int)GameStates.Pallet && pInteract)
+        {
+            //StopCoroutine(WelcomeToGame());
+            StartCoroutine(StartPallet());
+            pInteract = false;
+            Destroy(sparkles);
+        }
+
+        if (state == (int)GameStates.Sketchbook && sInteract)
+        {
+            StartCoroutine(LearnSketchBook());
+            sInteract = false;
+            Destroy(sparkles);
+        }
+
         if (state == (int)GameStates.Pallet && pInteract)
         {
             //StopCoroutine(WelcomeToGame());
@@ -54,22 +78,52 @@ public class inGameEvents : MonoBehaviour
         {
             StartCoroutine(StartPoint());
         }
-
-        if (Highfive.isHighfive)
+        if(pInteract || sInteract)
         {
+            sInteract = false;
+            pInteract = false;
+            Destroy(sparkles);
+        }
+
+        if (Highfive.isHighfive && Highfive.stopHighfive)
+        {
+            Highfive.stopHighfive = false;
             Instantiate(sparkles, (hand.transform));
-            //insert YAY! sound effect for brownie
-            //"Looks great!"
+            audioSource.PlayOneShot(brownieNarration[13]);
             anim_brownie.SetInteger("State", (int)BrownieStates.EndPoint);
+            StartCoroutine(StartSketchBook());
+            //insert YAY! sound effect for brownie
+            //"Looks great!"   
         }
     }
 
+    IEnumerator LearnSketchBook()
+    {
+        yield return new WaitForSeconds(1f);
+
+        audioSource.PlayOneShot(brownieNarration[17]);
+        yield return new WaitForSeconds(1f);
+
+
+    }
+
+    IEnumerator StartSketchBook()
+    {
+        state = (int)GameStates.Sketchbook;
+        yield return new WaitForSeconds(3f);
+        audioSource.PlayOneShot(brownieNarration[15]);
+        yield return new WaitForSeconds(5f);
+        audioSource.PlayOneShot(brownieNarration[16]);
+        playSparkles(sketchbook.transform);
+    }
     IEnumerator DrawSky()
     {
-        audioSource.PlayOneShot(brownieNarration[11]);
+        audioSource.clip = brownieNarration[11];
+        audioSource.Play();
         yield return new WaitForSeconds(9F);
         audioSource.PlayOneShot(brownieNarration[12]);
         startPointEvent = true;
+        Highfive.isHighfive = true;
     }
     IEnumerator StartPallet()
     {
@@ -78,11 +132,8 @@ public class inGameEvents : MonoBehaviour
         audioSource.PlayOneShot(brownieNarration[5]);
         yield return new WaitForSeconds(4F);
         //Insert highlight of the top slider
-        yield return new WaitForSeconds(2F);
-        //high second slider
-        yield return new WaitForSeconds(1F);
-        //highlight third slider
-        yield return new WaitForSeconds(3F);
+        yield return new WaitForSeconds(10F);
+
         audioSource.PlayOneShot(brownieNarration[6]);
         yield return new WaitForSeconds(4F);
         audioSource.PlayOneShot(brownieNarration[7]);
@@ -91,7 +142,7 @@ public class inGameEvents : MonoBehaviour
         yield return new WaitForSeconds(10F);
         audioSource.PlayOneShot(brownieNarration[9]);
         yield return new WaitForSeconds(4F);
-        //highlight water cube
+        
         yield return new WaitForSeconds(2f);
         audioSource.PlayOneShot(brownieNarration[10]);
         yield return new WaitForSeconds(8f);
@@ -101,17 +152,22 @@ public class inGameEvents : MonoBehaviour
     }
    IEnumerator WelcomeToGame()
     {
+        yield return new WaitForSeconds(2f);
         //play welcome to the game sound clip
         audioSource.PlayOneShot(brownieNarration[1]);
-        yield return new WaitForSeconds(7F); //time to be decided when i record voice.. lol
+        yield return new WaitForSeconds(7F); 
         audioSource.PlayOneShot(brownieNarration[2]);
         yield return new WaitForSeconds(10f);
         audioSource.PlayOneShot(brownieNarration[3]);
         yield return new WaitForSeconds(6f);
-        //insert highlight of the pallet
+        playSparkles(pallete.transform);
         state = (int)GameStates.Pallet;
     }
 
+    void playSparkles(Transform transform)
+    {
+        Instantiate(sparkles, transform);
+    }
     IEnumerator StartPoint()
     {
         anim_brownie.SetInteger("State", (int)BrownieStates.StartPoint);
@@ -130,7 +186,7 @@ public enum GameStates
     Welcome,
     Pallet,
     DrawSky,
-
+    Sketchbook,
 
 }
 

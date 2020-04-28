@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
         intensity = 0.0f;
         gameStart = false;
         fade = 0;
+        
     }
 
     public void setTips()
@@ -45,7 +46,7 @@ public class GameManager : MonoBehaviour
             audioSource.Play();
             Instantiate(brownie, brownieSpawn);
             fade = fadeTime;
-
+            isTips = true;
             //Destroy(pointLight, 5.1f);
         }
         if (fade > 0)
@@ -56,7 +57,7 @@ public class GameManager : MonoBehaviour
             cam[0].backgroundColor = new Color(colR, colG, colB, 0 / 255f);
             cam[1].backgroundColor = new Color(colR, colG, colB, 5 / 255f);
             cam[2].backgroundColor = new Color(colR, colG, colB, 0 / 255f);
-            intensity = Mathf.Lerp(0, 1, 1 - fade / fadeTime);
+            intensity = Mathf.Lerp(0, 3, 1 - fade / fadeTime);
             fade -= Time.deltaTime;
         }
     }
