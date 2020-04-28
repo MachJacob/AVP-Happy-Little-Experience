@@ -1046,12 +1046,12 @@ GameObject:
   - component: {fileID: 6161509090623504764}
   - component: {fileID: 1402869474884274841}
   m_Layer: 5
-  m_Name: CanvasFront
+  m_Name: SaveLoadFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8173177303570696586
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2395,6 +2395,7 @@ GameObject:
   - component: {fileID: 1063510576122359714}
   - component: {fileID: 9099817508386748972}
   - component: {fileID: 1376212692349611076}
+  - component: {fileID: 2602659059441032874}
   m_Layer: 0
   m_Name: Tab2
   m_TagString: Untagged
@@ -2492,6 +2493,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &2602659059441032874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2835197852288739433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456c034b309b11249908db4687978ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageControl: {fileID: 5537590586604461498}
+  tabToPage: 1
 --- !u!1 &2864643793552090122
 GameObject:
   m_ObjectHideFlags: 0
@@ -2901,12 +2916,12 @@ GameObject:
   - component: {fileID: 5269556769526638289}
   - component: {fileID: 1172748051425197496}
   m_Layer: 5
-  m_Name: CanvasBack
+  m_Name: StampBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4999579213447961697
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3608,12 +3623,12 @@ GameObject:
   - component: {fileID: 5417681473263784819}
   - component: {fileID: 6888176910866744128}
   m_Layer: 5
-  m_Name: CanvasFront
+  m_Name: ColourPresetFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9163763759386461274
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3715,7 +3730,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &891454958339144488
 Transform:
   m_ObjectHideFlags: 0
@@ -3747,7 +3762,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &866093246215157670
 Transform:
   m_ObjectHideFlags: 0
@@ -4065,7 +4080,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4539687970978608636
 Transform:
   m_ObjectHideFlags: 0
@@ -5203,10 +5218,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4408ea83ade0e9043810284ddc2858fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: {fileID: 3896810353648857475}
-  stamps: {fileID: 4808681467268209652}
-  saveload: {fileID: 4562451746399054047}
-  colourpresets: {fileID: 4915560069640382703}
+  menuFront: {fileID: 7568359255295661039}
+  menuBack: {fileID: 7905461149941803345}
+  stampsFront: {fileID: 7481032866312919540}
+  stampsBack: {fileID: 3422275947238736437}
+  saveloadFront: {fileID: 782436317927275323}
+  saveloadBack: {fileID: 8920279293250530004}
+  colourpresetsFront: {fileID: 4439062283790050796}
+  colourpresetsBack: {fileID: 7678800943889772918}
 --- !u!1 &6410764003521283547
 GameObject:
   m_ObjectHideFlags: 0
@@ -5305,6 +5324,7 @@ GameObject:
   - component: {fileID: 3271327279508393525}
   - component: {fileID: 7450190520156316994}
   - component: {fileID: 7489772769056232210}
+  - component: {fileID: 1723395873525912020}
   - component: {fileID: 2464065119063460104}
   m_Layer: 0
   m_Name: Tab3
@@ -5390,6 +5410,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1723395873525912020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6426064548068986895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456c034b309b11249908db4687978ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageControl: {fileID: 5537590586604461498}
+  tabToPage: 2
 --- !u!65 &2464065119063460104
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5552,6 +5586,7 @@ GameObject:
   - component: {fileID: 2025590118115670581}
   - component: {fileID: 2266481044778523168}
   - component: {fileID: 7338061337131577287}
+  - component: {fileID: 7872040573010778931}
   - component: {fileID: 1927274895911451494}
   m_Layer: 0
   m_Name: Tab5
@@ -5559,7 +5594,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &953936153956530246
 Transform:
   m_ObjectHideFlags: 0
@@ -5637,6 +5672,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &7872040573010778931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6741723556462415707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456c034b309b11249908db4687978ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageControl: {fileID: 0}
+  tabToPage: 0
 --- !u!65 &1927274895911451494
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5914,12 +5963,12 @@ GameObject:
   - component: {fileID: 8494264649611827094}
   - component: {fileID: 2391786347380551077}
   m_Layer: 5
-  m_Name: CanvasFront
+  m_Name: StampFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6839852048759483535
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6434,12 +6483,12 @@ GameObject:
   - component: {fileID: 1638355776957831815}
   - component: {fileID: 1392924864343279930}
   m_Layer: 5
-  m_Name: CanvasFront
+  m_Name: MenuFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &916728980758119325
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6539,12 +6588,12 @@ GameObject:
   - component: {fileID: 7402370403002444718}
   - component: {fileID: 4044339777072373263}
   m_Layer: 5
-  m_Name: CanvasBack
+  m_Name: ColourPresetBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3403827492471277784
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6657,12 +6706,12 @@ GameObject:
   - component: {fileID: 38632857590942940}
   - component: {fileID: 3813618149195863847}
   m_Layer: 5
-  m_Name: CanvasBack
+  m_Name: MenuBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2114754988029913581
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6869,6 +6918,7 @@ GameObject:
   - component: {fileID: 8031448052294581376}
   - component: {fileID: 1691301510167437488}
   - component: {fileID: 5522259031521155344}
+  - component: {fileID: 739446442458236708}
   - component: {fileID: 7077587143183704779}
   m_Layer: 0
   m_Name: Tab1
@@ -6954,6 +7004,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &739446442458236708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8237764317979764576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456c034b309b11249908db4687978ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageControl: {fileID: 5537590586604461498}
+  tabToPage: 0
 --- !u!65 &7077587143183704779
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7525,6 +7589,7 @@ GameObject:
   - component: {fileID: 2088992813221401313}
   - component: {fileID: 6348038279933921212}
   - component: {fileID: 7227870617424212029}
+  - component: {fileID: 5776247950360233033}
   m_Layer: 0
   m_Name: Tab4
   m_TagString: Untagged
@@ -7622,6 +7687,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &5776247950360233033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8800207246450194795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 456c034b309b11249908db4687978ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageControl: {fileID: 5537590586604461498}
+  tabToPage: 3
 --- !u!1 &8832709061004726534
 GameObject:
   m_ObjectHideFlags: 0
@@ -7889,12 +7968,12 @@ GameObject:
   - component: {fileID: 6084479359403748674}
   - component: {fileID: 962540199007301009}
   m_Layer: 5
-  m_Name: CanvasBack
+  m_Name: SaveLoadBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6230523314852153891
 RectTransform:
   m_ObjectHideFlags: 0

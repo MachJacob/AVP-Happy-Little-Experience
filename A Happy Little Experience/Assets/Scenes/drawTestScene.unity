@@ -543,6 +543,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3896810353648857475, guid: 4e1f7f29dfc8bc945850f665e5c98761,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4107576020239586692, guid: 4e1f7f29dfc8bc945850f665e5c98761,
         type: 3}
       propertyPath: m_textInfo.characterCount
