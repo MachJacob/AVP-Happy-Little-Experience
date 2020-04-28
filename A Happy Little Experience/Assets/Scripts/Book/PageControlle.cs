@@ -27,6 +27,8 @@ public class PageControlle : MonoBehaviour
     public GameObject colourpresetsFront;
     public GameObject colourpresetsBack;
 
+    public Animator bookAnim;
+
     public void OpenPage(PAGES openTo)
     {
         menuFront.SetActive(false);
@@ -48,18 +50,22 @@ public class PageControlle : MonoBehaviour
             case PAGES.MENU:
                 menuFront.SetActive(true);
                 menuBack.SetActive(true);
+                bookAnim.SetInteger("state", (int)BookStates.Tab1);
                 break;
             case PAGES.STAMPS:
                 stampsFront.SetActive(true);
                 stampsBack.SetActive(true);
+                bookAnim.SetInteger("state", (int)BookStates.Tab2);
                 break;
             case PAGES.SAVELOAD:
                 saveloadFront.SetActive(true);
                 saveloadBack.SetActive(true);
+                bookAnim.SetInteger("state", (int)BookStates.Tab3);
                 break;
             case PAGES.CLOURPRESETS:
                 colourpresetsFront.SetActive(true);
                 colourpresetsBack.SetActive(true);
+                bookAnim.SetInteger("state", (int)BookStates.Tab4);
                 break;
             case PAGES.VOLUME:
                 volumeMenuFront.SetActive(true);
@@ -72,8 +78,10 @@ public class PageControlle : MonoBehaviour
             default:
                 menuFront.SetActive(true);
                 menuBack.SetActive(true);
+                bookAnim.SetInteger("state", (int)BookStates.Tab1);
                 break;
         }
+        //bookAnim.SetInteger("state", (int)BookStates.Tab5);
     }
 
     private void Start()
