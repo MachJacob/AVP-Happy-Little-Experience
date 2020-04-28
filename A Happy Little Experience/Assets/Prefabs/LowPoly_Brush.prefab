@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4302352696280282315}
   - component: {fileID: 8353476615429309522}
   - component: {fileID: 107167220590760137}
-  - component: {fileID: 177220979202728777}
   m_Layer: 0
   m_Name: BrushTip
   m_TagString: Brush
@@ -62,19 +61,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &177220979202728777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2700933788178163325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd0af361ea21d0140b6307aa2042ddf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bookAnim: {fileID: 0}
 --- !u!1 &3614219753355890417
 GameObject:
   m_ObjectHideFlags: 0
