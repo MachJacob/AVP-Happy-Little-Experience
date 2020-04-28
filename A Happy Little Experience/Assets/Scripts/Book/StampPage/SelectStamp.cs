@@ -5,14 +5,14 @@ using UnityEngine;
 public class SelectStamp : MonoBehaviour
 {
     StampManager stampManager;
-    StampManager.Stamp stamp;
+    StampManager.StampData stamp;
 
     private void Start()
     {
         stampManager = GetComponentInParent<StampManager>();
     }
 
-    public void SetStamp(StampManager.Stamp newStamp)
+    public void SetStamp(StampManager.StampData newStamp)
     {
         stamp = newStamp;
 

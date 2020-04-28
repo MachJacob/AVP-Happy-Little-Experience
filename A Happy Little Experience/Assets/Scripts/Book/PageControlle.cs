@@ -12,34 +12,48 @@ public class PageControlle : MonoBehaviour
         CLOURPRESETS
     }
 
-    public GameObject menu;
-    public GameObject stamps;
-    public GameObject saveload;
-    public GameObject colourpresets;
+    public GameObject menuFront;
+    public GameObject menuBack;
+    public GameObject stampsFront;
+    public GameObject stampsBack;
+    public GameObject saveloadFront;
+    public GameObject saveloadBack;
+    public GameObject colourpresetsFront;
+    public GameObject colourpresetsBack;
 
     public void OpenPage(PAGES openTo)
     {
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            transform.GetChild(i).gameObject.SetActive(false);
-        }
+        menuFront.SetActive(false);
+        menuBack.SetActive(false);
+        stampsFront.SetActive(false);
+        stampsBack.SetActive(false);
+        saveloadFront.SetActive(false);
+        saveloadBack.SetActive(false);
+        colourpresetsFront.SetActive(false);
+        colourpresetsBack.SetActive(false);
+        
         //reactivate only the required page
         switch (openTo)
         {
             case PAGES.MENU:
-                menu.SetActive(true);
+                menuFront.SetActive(true);
+                menuBack.SetActive(true);
                 break;
             case PAGES.STAMPS:
-                stamps.SetActive(true);
+                stampsFront.SetActive(true);
+                stampsBack.SetActive(true);
                 break;
             case PAGES.SAVELOAD:
-                saveload.SetActive(true);
+                saveloadFront.SetActive(true);
+                saveloadBack.SetActive(true);
                 break;
             case PAGES.CLOURPRESETS:
-                colourpresets.SetActive(true);
+                colourpresetsFront.SetActive(true);
+                colourpresetsBack.SetActive(true);
                 break;
             default:
-                menu.SetActive(true);
+                menuFront.SetActive(true);
+                menuBack.SetActive(true);
                 break;
         }
     }

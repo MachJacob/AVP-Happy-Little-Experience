@@ -5,21 +5,23 @@ using UnityEngine;
 public class StampManager : MonoBehaviour
 {
     [System.Serializable]
-    public struct Stamp
+    public struct StampData
     {
         public Texture2D tex;
         public Material mat;
-        public Mesh mesh;
+        public GameObject obj;
     }
 
     public GameObject stamePagePrefab;
     public GameObject stampViewer;
-    Stamp viewedStamp;
+    public GameObject stampPrefab;
+    public GameObject stampSpawn;
+    StampData viewedStamp;
 
     List<GameObject> stampPages = new List<GameObject>();
     int currentPage = 0;
 
-    public List<Stamp> stamps = new List<Stamp>();
+    public List<StampData> stamps = new List<StampData>();
     int createdStamps = 0;
 
     private void OnEnable()
@@ -70,7 +72,7 @@ public class StampManager : MonoBehaviour
         }
     }
 
-    public void UpdateStampViewer(Stamp selectedStamp)
+    public void UpdateStampViewer(StampData selectedStamp)
     {
         viewedStamp = selectedStamp;
         stampViewer.GetComponent<SpriteRenderer>().sprite = Sprite.Create(selectedStamp.tex, new Rect(0, 0, selectedStamp.tex.width, selectedStamp.tex.height), new Vector2(0.5f, 0.5f));
@@ -80,7 +82,7 @@ public class StampManager : MonoBehaviour
     {
         if (viewedStamp.tex == null)
             return;
-        Stamp newStamp;
+        StampData newStamp;
         //create texture based on original texture
         newStamp.tex = new Texture2D(viewedStamp.tex.width, viewedStamp.tex.height);
         newStamp.tex.SetPixels32(viewedStamp.tex.GetPixels32());
@@ -88,7 +90,7 @@ public class StampManager : MonoBehaviour
         newStamp.mat = new Material(viewedStamp.mat);
         newStamp.mat.mainTexture = newStamp.tex;
 
-        newStamp.mesh = viewedStamp.mesh;
+        newStamp.obj = viewedStamp.obj;
 
         stamps.Add(newStamp);
         UpdateStampList();
@@ -98,5 +100,19 @@ public class StampManager : MonoBehaviour
     public void EditStamp()
     {
 
+    }
+
+    public void SpawnStamp()
+    {
+        GameObject[] stamps = GameObject.FindGameObjectsWithTag("Stamp");
+
+        foreach (var item in stamps)
+        {
+            Destroy(item);
+        }
+
+        GameObject newStamp = Instantiate(stampPrefab,stampSpawn.transform.position, stampSpawn.transform.rotation);
+        newStamp.GetComponent<Stamp>().tex = viewedStamp.mat;
+        newStamp.GetComponent<Stamp>().obj = viewedStamp.obj;
     }
 }

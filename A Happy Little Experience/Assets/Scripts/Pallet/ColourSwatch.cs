@@ -5,9 +5,18 @@ using UnityEngine;
 public class ColourSwatch : MonoBehaviour
 {
     public float duration_of_lerp;
-    private float lerp_progress = 0;
+    private float lerp_progress = 1;
 
     private Color colour;
+    public Color Colour
+    {
+        get { return colour; }   // get method
+        set
+        { 
+            colour = value;
+            mat.SetColor("_BaseColor", colour);
+        }  // set method
+  }
     private Color new_colour;
     private Material mat;
 
@@ -17,7 +26,7 @@ public class ColourSwatch : MonoBehaviour
     void Start()
     {
         mat = GetComponent<MeshRenderer>().material;
-        new_colour = colour = mat.color;
+        new_colour = colour = mat.GetColor("_BaseColor");
     }
 
     // Update is called once per frame
@@ -25,7 +34,7 @@ public class ColourSwatch : MonoBehaviour
     {
         if (setting_colour && lerp_progress <= 1)
         {
-            mat.color = Color.Lerp(colour, new_colour, lerp_progress);
+            mat.SetColor("_BaseColor", Color.Lerp(colour, new_colour, lerp_progress));
             lerp_progress += Time.deltaTime / duration_of_lerp;
         }
     }
@@ -54,16 +63,14 @@ public class ColourSwatch : MonoBehaviour
             if (setting_colour)
             {
                 StopCoroutine("loadColourChange");
-                Debug.Log("stop coroutine");
                 setting_colour = false;
-                new_colour = colour = mat.color;
+                new_colour = colour = mat.GetColor("_BaseColor");
             }
         }
     }
 
     IEnumerator loadColourChange(FreeDraw.DrawingSettings brush)
     {
-        Debug.Log("start coroutine");
         yield return new WaitForSeconds(0.5f);
         if (setting_colour)
         {

@@ -20,15 +20,16 @@ namespace FreeDraw
 
         public Material paint;
 
-        private void Update()
+        private void Start()
         {
-            paint.SetColor("_BaseColor", brushColour);
+            cleanBrush();
         }
 
         public void cleanBrush()
         {
             is_clean = true;
             brushColour = Color.white;
+            paint.SetColor("_BaseColor", brushColour);
         }
 
         public void setHue(float _hue)
@@ -53,6 +54,7 @@ namespace FreeDraw
         {
             brushColour = new_color;
             is_clean = false;
+            paint.SetColor("_BaseColor", brushColour);
         }
 
         public Color GetBrushColour()
