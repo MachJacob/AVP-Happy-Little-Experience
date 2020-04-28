@@ -9,9 +9,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private HDAdditionalLightData worldLight;
     [SerializeField] private Camera[] cam;
     [SerializeField] private Grabbable brush;
-    private bool gameStart;
+    public static bool gameStart;
+    public Transform brownieSpawn;
     private float fade;
     private float intensity;
+    public static bool isTips;
+    public AudioSource audioSource;
+    public GameObject brownie;
+
+    
     [SerializeField] private readonly float fadeTime = 5;
 
     void Awake()
@@ -24,6 +30,11 @@ public class GameManager : MonoBehaviour
         fade = 0;
     }
 
+    public void setTips()
+    {
+        isTips = !isTips;
+    }
+
     void Update()
     {
         worldLight.intensity = intensity;
@@ -31,6 +42,8 @@ public class GameManager : MonoBehaviour
         if (brush.held && !gameStart)
         {
             gameStart = true;
+            audioSource.Play();
+            Instantiate(brownie, brownieSpawn);
             fade = fadeTime;
 
             //Destroy(pointLight, 5.1f);

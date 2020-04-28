@@ -75,7 +75,13 @@ public class Grabbable : MonoBehaviour
                 colliding[1] = other.gameObject;
             }
         }
-    }
+
+        if (other.gameObject.tag == "Palette")
+        {
+            inGameEvents.pInteract = true;
+        }
+
+     }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Anchor")
@@ -90,6 +96,7 @@ public class Grabbable : MonoBehaviour
             }
         }
     }
+
 
     public void Drop()
     {

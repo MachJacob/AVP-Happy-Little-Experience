@@ -8,29 +8,54 @@ public class inGameEvents : MonoBehaviour
     Animator anim_brownie;
     public static bool isHighfive;
     public GameObject sparkles;
-    public GameObject hand;
+    GameObject hand;
     public static int state;
+   
+    AudioSource audioSource;
+    public AudioClip[] brownieNarration;
+    public GameObject brownie;
+    IEnumerator welcome;
+    public static bool pInteract;
+    
+
     //public bool isPointing;
     // Start is called before the first frame update
     void Start()
     {
-        anim_brownie = GetComponent<Animator>();
+        anim_brownie = brownie.GetComponent<Animator>();
+        audioSource = brownie.GetComponent<AudioSource>();
+        hand = GameObject.FindGameObjectWithTag("Highfive");
+        welcome = WelcomeToGame();
+
     }
+    
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(state == (int)GameStates.Tutorial)
+        if (GameManager.isTips && state == (int)GameStates.Welcome)
         {
             StartCoroutine(WelcomeToGame());
             //play brownie's first line
         }
-        if(startPointEvent)
+        if (state == (int)GameStates.Pallet && pInteract)
         {
-            StartCoroutine(StartPoint());     
+            //StopCoroutine(WelcomeToGame());
+            StartCoroutine(StartPallet());
         }
 
-        if(Highfive.isHighfive)
+        if (state == (int)GameStates.DrawSky)
+        {
+            StartCoroutine(DrawSky());
+          
+        }
+
+        if (startPointEvent)
+        {
+            StartCoroutine(StartPoint());
+        }
+
+        if (Highfive.isHighfive)
         {
             Instantiate(sparkles, (hand.transform));
             //insert YAY! sound effect for brownie
@@ -39,17 +64,52 @@ public class inGameEvents : MonoBehaviour
         }
     }
 
+    IEnumerator DrawSky()
+    {
+        audioSource.PlayOneShot(brownieNarration[11]);
+        yield return new WaitForSeconds(9F);
+        audioSource.PlayOneShot(brownieNarration[12]);
+        startPointEvent = true;
+    }
+    IEnumerator StartPallet()
+    {
+        audioSource.PlayOneShot(brownieNarration[4]);
+        yield return new WaitForSeconds(7F);
+        audioSource.PlayOneShot(brownieNarration[5]);
+        yield return new WaitForSeconds(4F);
+        //Insert highlight of the top slider
+        yield return new WaitForSeconds(2F);
+        //high second slider
+        yield return new WaitForSeconds(1F);
+        //highlight third slider
+        yield return new WaitForSeconds(3F);
+        audioSource.PlayOneShot(brownieNarration[6]);
+        yield return new WaitForSeconds(4F);
+        audioSource.PlayOneShot(brownieNarration[7]);
+        yield return new WaitForSeconds(6F);
+        audioSource.PlayOneShot(brownieNarration[8]);
+        yield return new WaitForSeconds(10F);
+        audioSource.PlayOneShot(brownieNarration[9]);
+        yield return new WaitForSeconds(4F);
+        //highlight water cube
+        yield return new WaitForSeconds(2f);
+        audioSource.PlayOneShot(brownieNarration[10]);
+        yield return new WaitForSeconds(8f);
+        state = (int)GameStates.DrawSky;
+
+
+    }
    IEnumerator WelcomeToGame()
     {
         //play welcome to the game sound clip
-        Debug.Log("Hey there! Welcome to your Happy Little Experience! I'm Brownie, nice to meet ya!");
-        yield return new WaitForSeconds(10F); //time to be decided when i record voice.. lol
-        //play the clip that introduces the sketchbook
+        audioSource.PlayOneShot(brownieNarration[1]);
+        yield return new WaitForSeconds(7F); //time to be decided when i record voice.. lol
+        audioSource.PlayOneShot(brownieNarration[2]);
         yield return new WaitForSeconds(10f);
-        //play the clip that tells the player to pick up the pallet with their other hand
-        yield return new WaitForSeconds(5f);
-        //play the clip that says the world is boring
-
+        audioSource.PlayOneShot(brownieNarration[3]);
+        yield return new WaitForSeconds(6f);
+        //insert highlight of the pallet
+        state = (int)GameStates.Pallet;
     }
 
     IEnumerator StartPoint()
@@ -60,10 +120,15 @@ public class inGameEvents : MonoBehaviour
         startPointEvent = false;
     }
 
+    void EndPoint()
+    {
+        anim_brownie.SetInteger("State", (int)BrownieStates.EndPoint);
+    }
 }
 public enum GameStates
 {
-    Tutorial,
+    Welcome,
+    Pallet,
     DrawSky,
 
 
