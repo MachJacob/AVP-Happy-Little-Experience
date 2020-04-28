@@ -16,15 +16,19 @@ public class inGameEvents : MonoBehaviour
     public GameObject brownie;
     public static bool pInteract;
     public static bool sInteract;
-    public static bool tab1Interact;
-    public static bool tab1Interact;
-    public static bool tab1Interact;
-    public static bool tab1Interact;
+    public static bool tabMenuInteract;
+    public static bool tabPalletInteract;
+    public static bool tabSaveInteract;
+    public static bool tabStampsInteract;
+    bool one;
+    bool two;
+    bool three;
+    bool four;
     bool go;
     public ParticleSystem sparkles2;
     public GameObject pallete;
     public GameObject sketchbook;
-    
+
 
     //public bool isPointing;
     // Start is called before the first frame update
@@ -35,9 +39,10 @@ public class inGameEvents : MonoBehaviour
         hand = GameObject.FindGameObjectWithTag("Highfive");
         state = (int)GameStates.Welcome;
         go = true;
+
     }
     
-
+ 
     // Update is called once per frame
     private void Update()
     {
@@ -57,6 +62,7 @@ public class inGameEvents : MonoBehaviour
 
         if (state == (int)GameStates.Sketchbook && sInteract)
         {
+            
             StartCoroutine(LearnSketchBook());
             sInteract = false;
             Destroy(sparkles);
@@ -64,10 +70,46 @@ public class inGameEvents : MonoBehaviour
 
         if (state == (int)GameStates.Pallet && pInteract)
         {
-            //StopCoroutine(WelcomeToGame());
+            StopCoroutine(WelcomeToGame());
             StartCoroutine(StartPallet());
         }
 
+        if (state == (int)GameStates.Sketchbook && tabMenuInteract)
+        {
+            one = true;
+            tabMenuInteract = false;
+            audioSource.Stop();
+            audioSource.PlayOneShot(brownieNarration[17]);
+        }
+
+        if (state == (int)GameStates.Sketchbook && tabSaveInteract)
+        {
+            two = true;
+            tabSaveInteract = false;
+            audioSource.Stop();
+            audioSource.PlayOneShot(brownieNarration[20]);
+        }
+
+        if (state == (int)GameStates.Sketchbook && tabStampsInteract)
+        {
+            three = true;
+            tabStampsInteract = false;
+            audioSource.Stop();
+            audioSource.PlayOneShot(brownieNarration[21]);
+        }
+
+        if (state == (int)GameStates.Sketchbook && tabPalletInteract)
+        {
+            four = true;
+            tabPalletInteract = false;
+            audioSource.Stop();
+            audioSource.PlayOneShot(brownieNarration[19]);
+        }
+        if(one && two && three && four)
+        {
+            state = (int)GameStates.ObjectPainting;
+            StartCoroutine(objectPainting());
+        }
         if (state == (int)GameStates.DrawSky)
         {
             StartCoroutine(DrawSky());
@@ -96,6 +138,26 @@ public class inGameEvents : MonoBehaviour
             //"Looks great!"   
         }
     }
+    
+    IEnumerator objectPainting()
+    {
+        yield return new WaitForSeconds(2f);
+        audioSource.PlayOneShot(brownieNarration[22]);
+        yield return new WaitForSeconds(8f);
+        audioSource.PlayOneShot(brownieNarration[23]);
+        yield return new WaitForSeconds(7f);
+        audioSource.PlayOneShot(brownieNarration[24]);
+        yield return new WaitForSeconds(15f);
+        audioSource.PlayOneShot(brownieNarration[25]);
+        //INSERT DONE BUTTON EVENT HERE???
+        yield return new WaitForSeconds(15f);
+        audioSource.PlayOneShot(brownieNarration[26]);
+        yield return new WaitForSeconds(3f);
+        audioSource.PlayOneShot(brownieNarration[27]);
+        yield return new WaitForSeconds(5f);
+        state = (int)GameStates.NewLoop;
+    }
+
 
     IEnumerator LearnSketchBook()
     {
@@ -187,7 +249,8 @@ public enum GameStates
     Pallet,
     DrawSky,
     Sketchbook,
-
+    ObjectPainting,
+    NewLoop,
 }
 
 public enum BrownieStates

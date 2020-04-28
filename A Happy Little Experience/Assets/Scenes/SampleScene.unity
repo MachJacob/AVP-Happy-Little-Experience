@@ -2073,7 +2073,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d3bd01f7ab392644ab4e6147d08a3380, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.746
+  m_Volume: 0.307
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2169,7 +2169,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 394612c6d2a0603418f045f78c1a0001, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.516
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2296,6 +2296,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e038578c527873d4b81e84bf22559ac6, type: 3}
   - {fileID: 8300000, guid: f17c9ed6fd29727409fae037a87d6a27, type: 3}
   brownie: {fileID: 6288222261433950824, guid: 3ba5ee3f96450a14fbf14aae163272b4, type: 3}
+  sparkles2: {fileID: 0}
+  pallete: {fileID: 0}
+  sketchbook: {fileID: 0}
 --- !u!20 &1178002763 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 20000010189485334, guid: 126d619cf4daa52469682f85c1378b4a,
