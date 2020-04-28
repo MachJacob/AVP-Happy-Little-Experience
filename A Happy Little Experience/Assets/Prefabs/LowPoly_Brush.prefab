@@ -254,7 +254,7 @@ MonoBehaviour:
   width: 10
   brushColour: {r: 1, g: 0, b: 0, a: 1}
   is_clean: 1
-  paint: {fileID: -1316836120494768905, guid: 11bef4eb25ab4414ba140851b53d7d0d, type: 3}
+  paint: {fileID: 2100000, guid: 3da4a1eb065784c4ea23992138fbb1af, type: 2}
 --- !u!114 &2857576529958745972
 MonoBehaviour:
   m_ObjectHideFlags: 0
