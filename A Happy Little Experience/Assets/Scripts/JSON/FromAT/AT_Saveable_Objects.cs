@@ -4,11 +4,14 @@ using UnityEngine;
 
 enum ObjectTypes
 {
-    Cube,
+    Canvas,
     Tree,
     Cloud,
     Grass,
-    What_else
+    Flower, 
+    Rock,
+    Mountain,
+    Stump
 }
 
 public abstract class AT_Saveable_Objects : MonoBehaviour
@@ -27,6 +30,7 @@ public abstract class AT_Saveable_Objects : MonoBehaviour
     [SerializeField] public Texture2D drawable_texture2D;
     //[SerializeField] public LayerMask Drawing_Layers;
 
+    [SerializeField] public GameObject new_object;
     [SerializeField] public Material new_mat;
 
 
@@ -42,7 +46,8 @@ public abstract class AT_Saveable_Objects : MonoBehaviour
        
     }
 
-    public virtual void Save(string _name, int _id, GameObject _current_object, Vector3 _position, Quaternion _rotation, Vector3 _scale, 
+    public virtual void Save(string _name, int _id, GameObject _current_object, GameObject _new_object,
+        Vector3 _position, Quaternion _rotation, Vector3 _scale, 
         Color _colour, Color32[] _cur_colours, Material _material,
         Sprite _drawable_sprite, Texture2D _drawable_texture2D, LayerMask _drawing_layers)
     {
@@ -51,6 +56,10 @@ public abstract class AT_Saveable_Objects : MonoBehaviour
 
         id = _id;
         id.ToString();
+
+        current_object = _current_object;
+
+        new_object = _new_object;
 
         position = _position;
         //position = transform.position; 
@@ -76,9 +85,6 @@ public abstract class AT_Saveable_Objects : MonoBehaviour
 
         drawable_texture2D = _drawable_texture2D;
 
-
-        //Drawing_Layers = _drawing_layers;
-
     }
 
     public virtual void Load(string[] values, int _id, Vector3 _position, Quaternion _rotation, Vector3 _scale)
@@ -91,10 +97,4 @@ public abstract class AT_Saveable_Objects : MonoBehaviour
         AT_SaveManager.Instance.the_saveable_objects.Remove(this);
         Destroy(gameObject);
     }
-
-    //private void ObjectString(this ObjectTypes objectType)
-    //{
-    //    objectType.ToString();
-    //}
-
 }
