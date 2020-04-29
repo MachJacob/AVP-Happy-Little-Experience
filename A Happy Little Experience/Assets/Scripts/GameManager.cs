@@ -17,17 +17,19 @@ public class GameManager : MonoBehaviour
     public AudioSource audioSource;
     public GameObject brownie;
 
-    
+
+
+
+
     [SerializeField] private readonly float fadeTime = 5;
 
-    void Awake()
+    void Start()
     {
         cam[0].backgroundColor = Color.black;
         cam[1].backgroundColor = Color.black;
         cam[2].backgroundColor = Color.black;
         //intensity = 0.0f;
         gameStart = false;
-        fade = 0;
         
     }
 

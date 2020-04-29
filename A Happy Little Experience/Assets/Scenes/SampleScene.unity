@@ -1312,7 +1312,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1036874833}
   - component: {fileID: 1036874832}
-  - component: {fileID: 1036874834}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1332,7 +1331,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1395,18 +1394,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &1036874834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1036874831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1068493182
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,7 +1404,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1068493184}
   - component: {fileID: 1068493183}
-  - component: {fileID: 1068493185}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -1500,18 +1486,6 @@ Transform:
   m_Father: {fileID: 3480060186557703428}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1068493185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1068493182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1084921383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1773,8 +1747,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52151d7deef634641a007dc2933eccd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointLight: {fileID: 1068493185}
-  worldLight: {fileID: 1036874834}
+  pointLight: {fileID: 1068493183}
+  worldLight: {fileID: 1036874832}
   cam:
   - {fileID: 1476372098}
   - {fileID: 1766630861}
