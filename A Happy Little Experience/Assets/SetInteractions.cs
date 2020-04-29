@@ -19,7 +19,8 @@ public class SetInteractions : MonoBehaviour
 
         if (other.gameObject.tag == "Brush")
         {
-            Destroy(GameObject.FindGameObjectWithTag("sparkles"));
+            inGameEvents.bInteract = true;
+           
         }
     }
 

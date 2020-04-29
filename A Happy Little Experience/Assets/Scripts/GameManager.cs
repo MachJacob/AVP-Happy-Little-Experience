@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
             Instantiate(brownie, brownieSpawn);
             fade = fadeTime;
             isTips = true;
+            Destroy(GameObject.FindGameObjectWithTag("sparkles"));
             //Destroy(pointLight, 5.1f);
         }
         if (fade > 0)

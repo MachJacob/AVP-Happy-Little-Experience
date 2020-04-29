@@ -59,8 +59,7 @@ public class inGameEvents : MonoBehaviour
         {
             //StopCoroutine(WelcomeToGame());
             StartCoroutine(StartPallet());
-            pInteract = false;
-            Destroy(sparkles);
+
         }
 
         if (state == (int)GameStates.Sketchbook && sInteract)
@@ -72,12 +71,11 @@ public class inGameEvents : MonoBehaviour
         }
 
    
-
-        if (state == (int)GameStates.Pallet && pInteract)
+        if(GameManager.gameStart)
         {
-            StopCoroutine(WelcomeToGame());
-            StartCoroutine(StartPallet());
+            Destroy(GameObject.FindGameObjectWithTag("sparkles"));
         }
+   
 
         if (state == (int)GameStates.Sketchbook && tabMenuInteract)
         {
