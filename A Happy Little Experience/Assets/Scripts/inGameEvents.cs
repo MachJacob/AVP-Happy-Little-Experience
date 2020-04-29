@@ -28,7 +28,7 @@ public class inGameEvents : MonoBehaviour
     public ParticleSystem sparkles2;
     GameObject pallete;
     GameObject sketchbook;
-
+    GameObject canvas;
 
     //public bool isPointing;
     // Start is called before the first frame update
@@ -133,6 +133,8 @@ public class inGameEvents : MonoBehaviour
         {
             Highfive.stopHighfive = false;
             Instantiate(sparkles, (hand.transform));
+            
+            
             audioSource.PlayOneShot(brownieNarration[13]);
             anim_brownie.SetInteger("State", (int)BrownieStates.EndPoint);
             StartCoroutine(StartSketchBook());
