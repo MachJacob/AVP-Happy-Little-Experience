@@ -1897,10 +1897,20 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 4791974075715708663, guid: 7c6529c173aa9e847be787a72a407beb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Palette
+      objectReference: {fileID: 0}
     - target: {fileID: 8620945853458017857, guid: 7c6529c173aa9e847be787a72a407beb,
         type: 3}
       propertyPath: m_Name
       value: LowPoly_PaintPalette
+      objectReference: {fileID: 0}
+    - target: {fileID: 8620945853458017857, guid: 7c6529c173aa9e847be787a72a407beb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1851150695382273343, guid: 7c6529c173aa9e847be787a72a407beb, type: 3}
@@ -2296,9 +2306,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e038578c527873d4b81e84bf22559ac6, type: 3}
   - {fileID: 8300000, guid: f17c9ed6fd29727409fae037a87d6a27, type: 3}
   brownie: {fileID: 6288222261433950824, guid: 3ba5ee3f96450a14fbf14aae163272b4, type: 3}
-  sparkles2: {fileID: 0}
-  pallete: {fileID: 0}
-  sketchbook: {fileID: 0}
+  sparkles2: {fileID: 3251196096220763678, guid: f12532244ec0b374eafd7d6ed0ed236c,
+    type: 3}
 --- !u!20 &1178002763 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 20000010189485334, guid: 126d619cf4daa52469682f85c1378b4a,
@@ -8271,6 +8280,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Low_Poly Book
       objectReference: {fileID: 0}
+    - target: {fileID: 5090057580645919741, guid: 4e1f7f29dfc8bc945850f665e5c98761,
+        type: 3}
+      propertyPath: m_TagString
+      value: Book
+      objectReference: {fileID: 0}
     - target: {fileID: 5344488896267672922, guid: 4e1f7f29dfc8bc945850f665e5c98761,
         type: 3}
       propertyPath: m_Mesh
@@ -10400,6 +10414,11 @@ PrefabInstance:
       propertyPath: paint
       value: 
       objectReference: {fileID: 2100000, guid: 3da4a1eb065784c4ea23992138fbb1af, type: 2}
+    - target: {fileID: 6969981604914586481, guid: 07ee5abbac29489459a22375052f1186,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8444562128680731992, guid: 07ee5abbac29489459a22375052f1186,
         type: 3}
       propertyPath: m_LocalPosition.x

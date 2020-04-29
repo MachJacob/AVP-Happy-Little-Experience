@@ -26,8 +26,8 @@ public class inGameEvents : MonoBehaviour
     bool four;
     bool go;
     public ParticleSystem sparkles2;
-    public GameObject pallete;
-    public GameObject sketchbook;
+    GameObject pallete;
+    GameObject sketchbook;
 
 
     //public bool isPointing;
@@ -37,6 +37,8 @@ public class inGameEvents : MonoBehaviour
         anim_brownie = brownie.GetComponent<Animator>();
         audioSource = brownie.GetComponent<AudioSource>();
         hand = GameObject.FindGameObjectWithTag("Highfive");
+        pallete = GameObject.FindGameObjectWithTag("Palette");
+        sketchbook = GameObject.FindGameObjectWithTag("Book");
         state = (int)GameStates.Welcome;
         go = true;
 
