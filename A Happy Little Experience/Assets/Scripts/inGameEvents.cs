@@ -26,9 +26,9 @@ public class inGameEvents : MonoBehaviour
     bool four;
     bool go;
     public ParticleSystem sparkles2;
-    public GameObject pallete;
-    public GameObject sketchbook;
-
+    GameObject pallete;
+    GameObject sketchbook;
+    GameObject canvas;
 
     //public bool isPointing;
     // Start is called before the first frame update
@@ -37,6 +37,8 @@ public class inGameEvents : MonoBehaviour
         anim_brownie = brownie.GetComponent<Animator>();
         audioSource = brownie.GetComponent<AudioSource>();
         hand = GameObject.FindGameObjectWithTag("Highfive");
+        pallete = GameObject.FindGameObjectWithTag("Palette");
+        sketchbook = GameObject.FindGameObjectWithTag("Book");
         state = (int)GameStates.Welcome;
         go = true;
 
@@ -131,6 +133,8 @@ public class inGameEvents : MonoBehaviour
         {
             Highfive.stopHighfive = false;
             Instantiate(sparkles, (hand.transform));
+            
+            
             audioSource.PlayOneShot(brownieNarration[13]);
             anim_brownie.SetInteger("State", (int)BrownieStates.EndPoint);
             StartCoroutine(StartSketchBook());
