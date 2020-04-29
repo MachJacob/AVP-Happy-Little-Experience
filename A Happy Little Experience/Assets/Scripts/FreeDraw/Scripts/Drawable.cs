@@ -321,43 +321,43 @@ namespace FreeDraw
             drawable_texture.Apply();
         }
 
-        public void SetSkyBox()
-        {
-            int height = drawable_texture.height;
-            int width = drawable_texture.width;
-            int size = 32;
-            TextureFormat format = TextureFormat.RGBA32;
-            TextureWrapMode wrapMode = TextureWrapMode.Clamp;
+        //public void SetSkyBox()
+        //{
+        //    int height = drawable_texture.height;
+        //    int width = drawable_texture.width;
+        //    int size = 32;
+        //    TextureFormat format = TextureFormat.RGBA32;
+        //    TextureWrapMode wrapMode = TextureWrapMode.Clamp;
 
-            // Create the texture and apply the configuration
-            Texture3D texture = new Texture3D(size, size, size, format, false);
-            texture.wrapMode = wrapMode;
+        //    // Create the texture and apply the configuration
+        //    Texture3D texture = new Texture3D(size, size, size, format, false);
+        //    texture.wrapMode = wrapMode;
 
-            Color[] c2D = drawable_texture.GetPixels();
-            Color[] c3D = new Color[c2D.Length];
-            Material skyboxMaterial;
-            skyboxMaterial = new Material(Shader.Find("SkyboxEquirectangular"));
+        //    Color[] c2D = drawable_texture.GetPixels();
+        //    Color[] c3D = new Color[c2D.Length];
+        //    Material skyboxMaterial;
+        //    skyboxMaterial = new Material(Shader.Find("SkyboxEquirectangular"));
 
-            for (int z = 0; z < size; ++z)
-                for (int y = 0; y < height; ++y)
-                    for (int x = 0; x < width; ++x)
-                        c3D[x + y * width + z * width * height]
-                          = c2D[x + y * width * size + z * width];
+        //    for (int z = 0; z < size; ++z)
+        //        for (int y = 0; y < height; ++y)
+        //            for (int x = 0; x < width; ++x)
+        //                c3D[x + y * width + z * width * height]
+        //                  = c2D[x + y * width * size + z * width];
 
-            texture.SetPixels(c3D);
+        //    texture.SetPixels(c3D);
 
-            // Apply the changes to the texture and upload the updated texture to the GPU
-            texture.Apply();
+        //    // Apply the changes to the texture and upload the updated texture to the GPU
+        //    texture.Apply();
 
-            // Save the texture to your Unity Project
-            AssetDatabase.CreateAsset(texture, "Assets/Example3DTexture.asset");
+        //    // Save the texture to your Unity Project
+        //    AssetDatabase.CreateAsset(texture, "Assets/Example3DTexture.asset");
 
-            skyboxMaterial.SetTexture("_Tex", texture);
-            RenderSettings.skybox = skyboxMaterial;
-            DynamicGI.UpdateEnvironment();
+        //    skyboxMaterial.SetTexture("_Tex", texture);
+        //    RenderSettings.skybox = skyboxMaterial;
+        //    DynamicGI.UpdateEnvironment();
 
 
-        }
+        //}
 
         void Awake()
         {

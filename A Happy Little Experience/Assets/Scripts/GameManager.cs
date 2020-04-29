@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.HighDefinition;
+
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private HDAdditionalLightData pointLight;
-    [SerializeField] private HDAdditionalLightData worldLight;
+    [SerializeField] private Light pointLight;
+    [SerializeField] private Light worldLight;
     [SerializeField] private Camera[] cam;
     [SerializeField] private Grabbable brush;
     public static bool gameStart;
@@ -38,8 +38,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        worldLight.intensity = intensity;
-        pointLight.intensity = 1 - intensity;
+        
         if (brush.held && !gameStart)
         {
             gameStart = true;
