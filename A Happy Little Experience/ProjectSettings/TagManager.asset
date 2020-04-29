@@ -17,6 +17,7 @@ TagManager:
   - Tab5
   - Stamp
   - Palette
+  - Highfive
   layers:
   - Default
   - TransparentFX

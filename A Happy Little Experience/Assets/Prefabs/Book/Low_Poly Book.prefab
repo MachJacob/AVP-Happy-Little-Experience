@@ -609,7 +609,7 @@ MonoBehaviour:
   triggerButton:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 9100000, guid: a0bb369b102701b41acf8b291831fe70, type: 2}
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
