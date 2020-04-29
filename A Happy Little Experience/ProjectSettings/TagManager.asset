@@ -18,6 +18,7 @@ TagManager:
   - Stamp
   - Palette
   - Highfive
+  - sparkles
   layers:
   - Default
   - TransparentFX

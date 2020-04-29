@@ -40,19 +40,6 @@ public class Grabber : MonoBehaviour
             held = null;
         }
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Palette" && inGameEvents.state == (int)GameStates.Pallet)
-        {
-            inGameEvents.pInteract = true;
-        }
-
-        if (other.gameObject.tag == "Book" && inGameEvents.state == (int)GameStates.Sketchbook)
-        {
-            inGameEvents.sInteract = true;
-        }
-    }
-
 
         public bool Grab(GameObject _grab)
     {

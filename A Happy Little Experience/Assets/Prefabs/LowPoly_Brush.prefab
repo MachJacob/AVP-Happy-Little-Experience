@@ -269,6 +269,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sparkles2
       objectReference: {fileID: 0}
+    - target: {fileID: 6636427410164384096, guid: 64f3a4eebbae2794c9fc5417e66965a3,
+        type: 3}
+      propertyPath: m_TagString
+      value: sparkles
+      objectReference: {fileID: 0}
     - target: {fileID: 6636427410164384101, guid: 64f3a4eebbae2794c9fc5417e66965a3,
         type: 3}
       propertyPath: m_LocalPosition.x

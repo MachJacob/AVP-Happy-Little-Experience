@@ -16,6 +16,7 @@ public class inGameEvents : MonoBehaviour
     public GameObject brownie;
     public static bool pInteract;
     public static bool sInteract;
+    public static bool bInteract;
     public static bool tabMenuInteract;
     public static bool tabPalletInteract;
     public static bool tabSaveInteract;
@@ -70,6 +71,8 @@ public class inGameEvents : MonoBehaviour
             Destroy(sparkles);
         }
 
+   
+
         if (state == (int)GameStates.Pallet && pInteract)
         {
             StopCoroutine(WelcomeToGame());
@@ -120,6 +123,7 @@ public class inGameEvents : MonoBehaviour
 
         if (startPointEvent)
         {
+            startPointEvent = false;
             StartCoroutine(StartPoint());
         }
         if(pInteract || sInteract)
@@ -226,6 +230,8 @@ public class inGameEvents : MonoBehaviour
         yield return new WaitForSeconds(10f);
         audioSource.PlayOneShot(brownieNarration[3]);
         yield return new WaitForSeconds(6f);
+        go = true;
+        startPointEvent = true;
         playSparkles(pallete.transform);
         state = (int)GameStates.Pallet;
     }
