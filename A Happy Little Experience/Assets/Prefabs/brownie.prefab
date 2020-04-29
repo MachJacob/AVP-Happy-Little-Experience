@@ -1566,13 +1566,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6288222261433950824}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62a3b5a68b8ccec439700f4e92175252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startPointEvent: 0
   sparkles: {fileID: 0}
+  audioSource: {fileID: 0}
   brownieNarration:
   - {fileID: 8300000, guid: 7463c8a96d4b59249a68b0d75289e7fd, type: 3}
   - {fileID: 8300000, guid: 246fb2f7cee90c0488d072a15c461867, type: 3}

@@ -27,6 +27,16 @@ public class SetInteractions : MonoBehaviour
             inGameEvents.bInteract = true;
            
         }
+
+        if (other.gameObject.tag == "Highfive")
+        {
+            if (inGameEvents.isHighfive)
+            {
+                Debug.Log("Highfive");
+                inGameEvents.stopHighfive = true;
+            }
+
+        }
     }
 
 }

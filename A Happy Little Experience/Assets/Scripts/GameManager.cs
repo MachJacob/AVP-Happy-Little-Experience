@@ -44,7 +44,6 @@ public class GameManager : MonoBehaviour
         {
             gameStart = true;
             audioSource.Play();
-            Instantiate(brownie, brownieSpawn);
             fade = fadeTime;
             isTips = true;
             Destroy(GameObject.FindGameObjectWithTag("sparkles"));
