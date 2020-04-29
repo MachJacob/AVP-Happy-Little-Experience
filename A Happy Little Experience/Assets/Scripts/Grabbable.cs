@@ -39,7 +39,11 @@ public class Grabbable : MonoBehaviour
             GetComponent<Rigidbody>().useGravity = false;
             GetComponent<Rigidbody>().isKinematic = true;
             colliding[0].GetComponent<Grabber>().Grab(gameObject);
-            GetComponent<FloatingScript>().enabled = false;
+            
+            if(this.tag == "Paintbrush")
+            {
+                GetComponent<FloatingScript>().enabled = false;
+            }
         }
         else if ((OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger) || Input.GetKeyDown(KeyCode.Backspace)) && !held && colliding[1] && !drop) //attach right
         {
@@ -58,7 +62,13 @@ public class Grabbable : MonoBehaviour
             GetComponent<Rigidbody>().isKinematic = true;
             colliding[1].GetComponent<Grabber>().Grab(gameObject);
             GetComponent<FloatingScript>().enabled = false;
+            if (this.tag == "Paintbrush")
+            {
+                GetComponent<FloatingScript>().enabled = false;
+            }
         }
+
+        
         drop = false;
     }
 

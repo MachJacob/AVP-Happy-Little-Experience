@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6636427410164384101}
   - component: {fileID: 6636427410164384102}
   - component: {fileID: 6636427410164384103}
-  - component: {fileID: 169254338740120887}
   m_Layer: 0
   m_Name: Sparkles2
   m_TagString: Untagged
@@ -4813,18 +4812,3 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &169254338740120887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6636427410164384096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15edda3bff1e6964eb21639e31097fbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  start: {x: 0, y: 1.3, z: 0.409}
-  end: {x: 0, y: 0.97, z: 0.409}
-  travelTime: 3.5
