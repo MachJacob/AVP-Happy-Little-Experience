@@ -24,8 +24,7 @@ public class colourTrench : MonoBehaviour
         {
             foreach (ContactPoint contact in collision.contacts)
             {
-                Vector2 collison_vector = new Vector2(contact.point.x, contact.point.y);
-                Vector3 local_pos = transform.InverseTransformPoint(collison_vector);
+                Vector3 local_pos = transform.InverseTransformPoint(contact.point);
                 value = local_pos.x + 0.5f;
             }
             switch (slider)
