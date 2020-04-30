@@ -9,9 +9,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private HDAdditionalLightData worldLight;
     [SerializeField] private Camera[] cam;
     [SerializeField] private Grabbable brush;
-    private bool gameStart;
+    public static bool gameStart;
+    public Transform brownieSpawn;
     private float fade;
     private float intensity;
+    public static bool isTips;
+    public AudioSource audioSource;
+    public GameObject brownie;
+
+    
     [SerializeField] private readonly float fadeTime = 5;
 
     void Awake()
@@ -22,6 +28,12 @@ public class GameManager : MonoBehaviour
         intensity = 0.0f;
         gameStart = false;
         fade = 0;
+        
+    }
+
+    public void setTips()
+    {
+        isTips = !isTips;
     }
 
     void Update()
@@ -31,8 +43,10 @@ public class GameManager : MonoBehaviour
         if (brush.held && !gameStart)
         {
             gameStart = true;
+            audioSource.Play();
             fade = fadeTime;
-
+            isTips = true;
+            Destroy(GameObject.FindGameObjectWithTag("sparkles"));
             //Destroy(pointLight, 5.1f);
         }
         if (fade > 0)
@@ -43,7 +57,7 @@ public class GameManager : MonoBehaviour
             cam[0].backgroundColor = new Color(colR, colG, colB, 0 / 255f);
             cam[1].backgroundColor = new Color(colR, colG, colB, 5 / 255f);
             cam[2].backgroundColor = new Color(colR, colG, colB, 0 / 255f);
-            intensity = Mathf.Lerp(0, 1, 1 - fade / fadeTime);
+            intensity = Mathf.Lerp(0, 3, 1 - fade / fadeTime);
             fade -= Time.deltaTime;
         }
     }

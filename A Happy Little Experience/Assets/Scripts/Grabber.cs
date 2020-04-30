@@ -41,7 +41,7 @@ public class Grabber : MonoBehaviour
         }
     }
 
-    public bool Grab(GameObject _grab)
+        public bool Grab(GameObject _grab)
     {
         held = _grab;
         if (right)
